@@ -40,12 +40,13 @@ window.addEventListener("scroll", () => {
 // Typed.js (a Codehal is ezt használja) :contentReference[oaicite:2]{index=2}
 new Typed(".typed", {
   strings: [
-    "IT Support",
-    "Junior rendszerüzemeltető",
-    "DB üzemeltető",
-    "IT Koordinátor",
-    "Csoportvezető"
-  ],
+  "Csoportvezető",
+  "Irodai és IT koordinátor",
+  "Junior rendszerüzemeltető",
+  "DB üzemeltető (MS SQL)",
+  "IT support",
+  "Hobbi szervíz: (laptop/telefon/okosóra)"
+],
   typeSpeed: 55,
   backSpeed: 35,
   backDelay: 1200,
