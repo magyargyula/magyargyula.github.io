@@ -67,9 +67,9 @@ section{ padding: 9rem 9% 6rem; }
 }
 
 .logo.logo-img img{
-  height: 50px;      /* 32 -> 40 -> 50 */
+  height: 60px;      /* 32 -> 40 -> 50 */
   width: auto;
-  max-width: 190px;  /* 140 -> 180 -> 190 */
+  max-width: 210px;  /* 140 -> 180 -> 190 */
   display:block;
   object-fit: contain;
 }
