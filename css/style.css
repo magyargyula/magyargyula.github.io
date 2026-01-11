@@ -1,23 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root{
-  --bg:#0f172a;
-  --bg2:#111c36;
-  --card:#141f3f;
-  --text:#e5e7eb;
-  --muted:#a7b0c0;
-  --main:#22d3ee;
-  --border: rgba(255,255,255,.08);
-  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --bg:#070b18;
+  --bg2:#0b1430;
+  --card: rgba(255,255,255,.04);
+
+  --text:#eaf0ff;
+  --muted:#a9b6d6;
+
+  /* jeges kék + tüzes narancs */
+  --ice:#22d3ee;
+  --fire:#ff7a18;
+
+  /* fő kiemelés legyen jeges kék */
+  --main: var(--ice);
+
+  --border: rgba(255,255,255,.10);
+  --shadow: 0 16px 40px rgba(0,0,0,.45);
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; font-size:62.5%; }
 body{
   font-family:"Poppins",sans-serif;
-  background: radial-gradient(1200px 800px at 15% 10%, rgba(34,211,238,.10), transparent 55%),
-              radial-gradient(900px 650px at 90% 20%, rgba(99,102,241,.10), transparent 55%),
-              var(--bg);
+  background:
+    radial-gradient(900px 650px at 18% 18%, rgba(255,122,24,.18), transparent 55%),
+    radial-gradient(900px 650px at 85% 20%, rgba(34,211,238,.16), transparent 55%),
+    radial-gradient(1200px 900px at 55% 110%, rgba(34,211,238,.10), transparent 60%),
+    var(--bg);
   color: var(--text);
 }
 
@@ -54,11 +64,13 @@ section{ padding: 9rem 9% 6rem; }
   gap:.8rem;
 }
 .logo.logo-img img{
-  height: 34px;      /* ha kicsi/nagy, ezt állítsd */
+  height: 32px;
   width: auto;
+  max-width: 140px;
   display:block;
   object-fit: contain;
 }
+
 .logo.logo-img{
   padding: .4rem .6rem;
   border-radius: 1.2rem;
@@ -117,19 +129,29 @@ section{ padding: 9rem 9% 6rem; }
   padding: 1.2rem 1.6rem;
   border-radius: 1.2rem;
   border: 1px solid rgba(34,211,238,.35);
-  background: rgba(34,211,238,.12);
+  background: linear-gradient(135deg, rgba(34,211,238,.16), rgba(255,122,24,.10));
   color: var(--text);
   font-size: 1.5rem;
   font-weight: 700;
-  transition: transform .15s ease, background .15s ease;
+  transition: transform .15s ease, filter .15s ease, border-color .15s ease;
 }
-.btn:hover{ transform: translateY(-2px); background: rgba(34,211,238,.18); }
-.btn-ghost{
-  border-color: var(--border);
-  background: rgba(255,255,255,.04);
+.btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  border-color: rgba(255,122,24,.35);
 }
 
 .home-img{ display:flex; align-items:center; justify-content:center; }
+.home-img img{
+  width: 28rem;
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 2.6rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display:block;
+}
+
 .avatar{
   width: 28rem; height: 28rem;
   border-radius: 2.6rem;
@@ -190,8 +212,8 @@ section{ padding: 9rem 9% 6rem; }
 .project h3{ font-size: 1.8rem; }
 .tag{
   font-size: 1.2rem;
-  color: var(--main);
-  border: 1px solid rgba(34,211,238,.25);
+  color: var(--ice);
+  border: 1px solid rgba(34,211,238,.28);
   padding: .4rem .8rem;
   border-radius: 999px;
   white-space: nowrap;
