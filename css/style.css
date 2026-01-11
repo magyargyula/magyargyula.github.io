@@ -59,15 +59,17 @@ section{ padding: 9rem 9% 6rem; }
   font-weight: 800;
   letter-spacing: .6px;
 }
+
 .logo.logo-img{
   display:flex;
   align-items:center;
   gap:.8rem;
 }
+
 .logo.logo-img img{
-  height: 32px;
+  height: 40px;      /* 32 -> 40 */
   width: auto;
-  max-width: 140px;
+  max-width: 180px;  /* 140 -> 180 */
   display:block;
   object-fit: contain;
 }
@@ -76,6 +78,7 @@ section{ padding: 9rem 9% 6rem; }
   padding: .4rem .6rem;
   border-radius: 1.2rem;
 }
+
 .logo span{ color: var(--main); }
 
 #menu-icon{
@@ -386,3 +389,10 @@ section{ padding: 9rem 9% 6rem; }
   .projects-grid{ grid-template-columns: 1fr; }
   .cards{ grid-template-columns: 1fr; }
 }
+@media (max-width: 560px){
+  .logo.logo-img img{
+    height: 34px;
+    max-width: 160px;
+  }
+}
+
