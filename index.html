@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Magyar Gyula – IT portfólió</title>
-  <meta name="description" content="Magyar Gyula – IT portfólió. Rendszerüzemeltetés, IT support, virtualizáció, MSSQL." />
+  <meta name="description" content="Magyar Gyula – IT portfólió. Rendszerüzemeltetés, IT support, virtualizáció, MSSQL, üzemeltetés, csoportvezető, ." />
   <style>
     :root { color-scheme: light; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; }
@@ -36,7 +36,8 @@
   <div class="wrap">
     <header>
       <h1>Magyar Gyula</h1>
-      <p class="subtitle">Junior rendszerüzemeltető / IT Support • Windows • Virtualizáció • MSSQL</p>
+      <p class="subtitle">Informatikai / Irodai koordinációs pozíciók (Rendszerüzemeltetés, IT support, junior DBA, Csoportvezetés)
+</p>
       <p class="muted">
         Stabil, megbízható üzemeltetés és gyors hibaelhárítás Windows környezetben. Homelab projektek, dokumentált megoldások.
       </p>
@@ -71,3 +72,66 @@
           <li>Homelab: gyakorlás, tesztkörnyezet, leírások</li>
         </ul>
       </section>
+
+      <section id="keszsegek">
+        <h2>Készségek</h2>
+        <ul>
+          <li><strong>Windows:</strong> telepítés, konfiguráció, hibakeresés</li>
+          <li><strong>AD / alapok:</strong> felhasználók, csoportok, jogosultságok (tanulás/gyakorlás)</li>
+          <li><strong>Virtualizáció:</strong> Hyper-V, VM létrehozás, snapshot/checkpoint</li>
+          <li><strong>Hálózat:</strong> LAN/Wi-Fi hibakeresés, IP/DNS alapok</li>
+          <li><strong>Adatbázis:</strong> MSSQL lekérdezések (SELECT, JOIN alapok)</li>
+          <li><strong>Hardver:</strong> laptop/telefon diagnosztika, csere/javítás</li>
+        </ul>
+      </section>
+
+      <section id="projektek">
+        <h2>Projektek (minta)</h2>
+
+        <p class="proj">
+          <strong>1) Homelab – Windows környezet alapok</strong><br/>
+          AD + DNS/DHCP (gyakorló lab), felhasználók/csoportok, egyszerű jogosultsági modell, dokumentált lépések.
+          <div class="kpi">Cél: reprodukálható setup + hibaelhárítási rutin</div>
+        </p>
+        <hr style="border:none;border-top:1px solid #eee;margin:12px 0;"/>
+
+        <p class="proj">
+          <strong>2) Hyper-V – 2 VM + mentés szemlélet</strong><br/>
+          VM-ek létrehozása, checkpoint használat, alap mentési/restore tesztek (gyakorlás).
+          <div class="kpi">Cél: “ha baj van, vissza tudom állítani”</div>
+        </p>
+        <hr style="border:none;border-top:1px solid #eee;margin:12px 0;"/>
+
+        <p class="proj">
+          <strong>3) MSSQL – lekérdezési alapok</strong><br/>
+          Példa adatbázison SELECT/JOIN, egyszerű riport jellegű lekérdezések, gyakorló jegyzet.
+          <div class="kpi">Cél: adatkinyerés üzleti kérdésekre</div>
+        </p>
+
+        <p class="muted" style="margin-top:10px;">
+          Tipp: ezeket majd kiegészítjük képpel, rövid “mit tanultam belőle” résszel és (ha szeretnéd) GitHub linkkel.
+        </p>
+      </section>
+
+      <section id="kapcsolat">
+        <h2>Kapcsolat</h2>
+        <ul>
+          <li>Email: <a href="mailto:idejonazemail@pelda.hu">idejonazemail@pelda.hu</a></li>
+          <li>GitHub: <a href="https://github.com/magyargyula" target="_blank" rel="noreferrer">github.com/magyargyula</a></li>
+          <!-- LinkedIn, ha lesz -->
+          <!-- <li>LinkedIn: <a href="https://www.linkedin.com/in/..." target="_blank" rel="noreferrer">profil</a></li> -->
+        </ul>
+        <p class="muted">Ha megírod a valódi email címed (vagy csak a felhasználóneved), beállítom neked szépen.</p>
+      </section>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Magyar Gyula • GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
