@@ -1,0 +1,64 @@
+// év a footerben
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// mobil menü
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.getElementById("navbar");
+
+menuIcon.addEventListener("click", () => {
+  navbar.classList.toggle("active");
+  menuIcon.classList.toggle("bx-x");
+});
+
+// sticky header + active link scroll alapján
+const header = document.querySelector(".header");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("sticky", window.scrollY > 80);
+
+  let current = "";
+  sections.forEach(sec => {
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 140;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
+    if (top >= offset && top < offset + height) current = id;
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if (current && a.getAttribute("href") === `#${current}`) a.classList.add("active");
+  });
+
+  // menü zárása scroll közben mobilon
+  navbar.classList.remove("active");
+  menuIcon.classList.remove("bx-x");
+});
+
+// Typed.js (a Codehal is ezt használja) :contentReference[oaicite:2]{index=2}
+new Typed(".typed", {
+  strings: [
+    "IT Support",
+    "Junior rendszerüzemeltető",
+    "DB üzemeltető",
+    "IT Koordinátor",
+    "Csoportvezető"
+  ],
+  typeSpeed: 55,
+  backSpeed: 35,
+  backDelay: 1200,
+  loop: true
+});
+
+// ScrollReveal (a Codehal is ezt használja) :contentReference[oaicite:3]{index=3}
+ScrollReveal({
+  distance: "30px",
+  duration: 900,
+  easing: "cubic-bezier(.2,.8,.2,1)",
+  reset: false
+});
+
+ScrollReveal().reveal(".home-content, .section-title", { origin: "top", interval: 120 });
+ScrollReveal().reveal(".home-img, .about-box, .card, .project, .contact-box", { origin: "bottom", interval: 120 });
