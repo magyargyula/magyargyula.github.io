@@ -48,6 +48,21 @@ section{ padding: 9rem 9% 6rem; }
   font-weight: 800;
   letter-spacing: .6px;
 }
+.logo.logo-img{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+.logo.logo-img img{
+  height: 34px;      /* ha kicsi/nagy, ezt állítsd */
+  width: auto;
+  display:block;
+  object-fit: contain;
+}
+.logo.logo-img{
+  padding: .4rem .6rem;
+  border-radius: 1.2rem;
+}
 .logo span{ color: var(--main); }
 
 #menu-icon{
