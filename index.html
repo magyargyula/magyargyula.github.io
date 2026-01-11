@@ -3,10 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Magyar Gyula – Portfólió</title>
+  <title>Magyar Gyula – IT portfólió</title>
+  <meta name="description" content="Magyar Gyula – IT portfólió. Rendszerüzemeltetés, IT support, virtualizáció, MSSQL." />
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 56px; }
+    header { padding: 28px 0 10px; }
+    h1 { font-size: 34px; margin: 0 0 6px; }
+    .subtitle { font-size: 16px; opacity: .8; margin: 0 0 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+    .badge { border: 1px solid #ddd; border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
+    @media (min-width: 900px){ .grid { grid-template-columns: 1fr 1fr; } }
+    section { border: 1px solid #eee; border-radius: 14px; padding: 16px; }
+    h2 { font-size: 18px; margin: 0 0 10px; }
+    ul { margin: 0; padding-left: 18px; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn { display: inline-block; border: 1px solid #ddd; border-radius: 12px; padding: 10px 12px; font-weight: 600; }
+    .muted { opacity: .75; }
+    footer { margin-top: 18px; opacity: .75; font-size: 13px; }
+    .proj { margin: 0; }
+    .proj strong { display: inline-block; margin-bottom: 6px; }
+    .kpi { font-size: 13px; opacity: .85; margin-top: 6px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.95em; }
+  </style>
 </head>
+
 <body>
-  <h1>Szia! Magyar Gyula vagyok.</h1>
-  <p>Ez az első portfólió oldalam GitHub Pages-en.</p>
-</body>
-</html>
+  <div class="wrap">
+    <header>
+      <h1>Magyar Gyula</h1>
+      <p class="subtitle">Junior rendszerüzemeltető / IT Support • Windows • Virtualizáció • MSSQL</p>
+      <p class="muted">
+        Stabil, megbízható üzemeltetés és gyors hibaelhárítás Windows környezetben. Homelab projektek, dokumentált megoldások.
+      </p>
+
+      <div class="badges">
+        <span class="badge">Windows / AD alapok</span>
+        <span class="badge">Hyper-V</span>
+        <span class="badge">LAN / Wi-Fi hibakeresés</span>
+        <span class="badge">MSSQL (query)</span>
+        <span class="badge">Hardver javítás</span>
+        <span class="badge">Microsoft Office (Excel)</span>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="#projektek">Projektek</a>
+        <a class="btn" href="#kapcsolat">Kapcsolat</a>
+        <!-- Ide majd betehetjük a CV PDF linket -->
+        <!-- <a class="btn" href="CV_MagyarGyula.pdf" target="_blank" rel="noreferrer">Önéletrajz (PDF)</a> -->
+      </div>
+    </header>
+
+    <div class="grid">
+      <section id="rolam">
+        <h2>Rólam</h2>
+        <p class="muted">
+          Informatikai üzemeltetés és support területen építem a tudásom: Windows rendszerek, alap hálózat, virtualizáció,
+          mentés-visszaállítás szemlélet. Szeretek dokumentálni és “rendbe rakni” rendszereket.
+        </p>
+        <ul>
+          <li>Felhasználói hibák gyors diagnosztizálása (hardver/szoftver/hálózat)</li>
+          <li>Alap admin feladatok: jogosultság, beállítások, telepítések</li>
+          <li>Homelab: gyakorlás, tesztkörnyezet, leírások</li>
+        </ul>
+      </section>
