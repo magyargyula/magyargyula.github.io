@@ -58,8 +58,11 @@
 
       <div class="cta">
         <a class="btn" href="#projects">Projektek</a>
-        <a class="btn btn-ghost" src="CV.pdf" href="Magyar_Gyula_CV.pdf" target="_blank" rel="noreferrer">Önéletrajz (PDF)</a>
+        <a class="btn btn-ghost" src="CV.pdf" href="CV.pdf" target="_blank" rel="noreferrer">Önéletrajz (PDF)</a>
         <a class="btn btn-ghost" src="Motivációs_levél.pdf" href="Motivációs_levél.pdf" target="_blank" rel="noreferrer">Motivációs levél (PDF)</a>
+        <button class="btn btn-ghost" id="phoneModalOpen" type="button">
+          Telefonszám kérése
+        </button>
       </div>
     </div>
 
@@ -221,9 +224,6 @@
     <div class="contact-box">
       <p><i class="bx bx-envelope"></i> <a href="mailto:mgycontact@gmail.com">mgycontact@gmail.com</a></p>
       <p><i class="bx bxl-github"></i> <a href="https://github.com/magyargyula" target="_blank" rel="noreferrer">github.com/magyargyula</a></p>
-
-      <!-- Telefonszámot csak akkor javaslom kitenni, ha kifejezetten szeretnéd: -->
-      <!-- <p><i class="bx bx-phone"></i> +36 50 114 5291</p> -->
     </div>
   </section>
 
@@ -231,6 +231,43 @@
     <p>© <span id="year"></span> Magyar Gyula • Portfólió</p>
     <a class="to-top" href="#top" aria-label="Ugrás a tetejére"><i class="bx bx-up-arrow-alt"></i></a>
   </footer>
+
+  <!-- Phone request modal -->
+    <div class="modal" id="phoneModal" aria-hidden="true">
+      <div class="modal__backdrop" data-close="true"></div>
+    
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="phoneModalTitle">
+        <div class="modal__head">
+          <h3 class="modal__title" id="phoneModalTitle">Telefonszám kérése</h3>
+          <button class="modal__close" type="button" aria-label="Bezárás" id="phoneModalClose">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+    
+        <div class="modal__body">
+          <p class="modal__text">
+            A telefonszámomat nem jelenítem meg nyilvánosan. Kattints az alábbi gombra, és egy előre kitöltött e-mail megnyílik,
+            amire válaszban elküldöm az elérhetőséget.
+          </p>
+    
+          <div class="modal__actions">
+            <a class="btn" id="phoneMailto"
+               href="mailto:mgycontact@gmail.com?subject=Telefonsz%C3%A1m%20k%C3%A9r%C3%A9se%20%E2%80%93%20Magyar%20Gyula%20portf%C3%B3li%C3%B3&body=Szia%20Gyula%2C%0A%0AK%C3%A9rlek%20k%C3%BCldd%20el%20a%20telefonsz%C3%A1modat%20a%20gyors%20egyeztet%C3%A9shez.%0A%0AK%C3%B6sz%C3%B6n%C3%B6m%2C%0A%5BN%C3%A9v%5D%0A%5BC%C3%A9g%5D">
+              E-mail megnyitása
+            </a>
+    
+            <button class="btn btn-ghost" type="button" data-close="true">
+              Mégse
+            </button>
+          </div>
+    
+          <p class="modal__hint">
+            Tipp: ha nincs beállítva levelezőprogram a gépeden, másold ki ezt:
+            <span class="modal__email">mgycontact@gmail.com</span>
+          </p>
+        </div>
+      </div>
+    </div>
 
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
