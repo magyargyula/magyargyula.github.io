@@ -17,6 +17,7 @@
 
   --border: rgba(255,255,255,.10);
   --shadow: 0 16px 40px rgba(0,0,0,.45);
+  --typed: #ff7a18;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -106,7 +107,8 @@ section{ padding: 9rem 9% 6rem; }
   max-width: 62rem;
   margin: 1.3rem 0 2.2rem;
 }
-.typed{ color: var(--main); font-weight: 700; }
+
+.typed{ color: var(--typed); font-weight: 800; }
 
 .socials{
   display:flex; gap:1.2rem; margin: 1.2rem 0 2.2rem;
