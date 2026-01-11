@@ -62,3 +62,42 @@ ScrollReveal({
 
 ScrollReveal().reveal(".home-content, .section-title", { origin: "top", interval: 120 });
 ScrollReveal().reveal(".home-img, .about-box, .card, .project, .contact-box", { origin: "bottom", interval: 120 });
+
+// --- Phone request modal ---
+const phoneModal = document.getElementById("phoneModal");
+const phoneModalOpen = document.getElementById("phoneModalOpen");
+const phoneModalClose = document.getElementById("phoneModalClose");
+
+function openPhoneModal() {
+  phoneModal.classList.add("is-open");
+  phoneModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  // fókusz a bezárás gombra (accessibility)
+  phoneModalClose?.focus();
+}
+
+function closePhoneModal() {
+  phoneModal.classList.remove("is-open");
+  phoneModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  phoneModalOpen?.focus();
+}
+
+phoneModalOpen?.addEventListener("click", openPhoneModal);
+phoneModalClose?.addEventListener("click", closePhoneModal);
+
+// katt háttérre vagy "Mégse" gombra (data-close)
+phoneModal?.addEventListener("click", (e) => {
+  const target = e.target;
+  if (target && target.getAttribute && target.getAttribute("data-close") === "true") {
+    closePhoneModal();
+  }
+});
+
+// ESC bezár
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && phoneModal.classList.contains("is-open")) {
+    closePhoneModal();
+  }
+});
+
