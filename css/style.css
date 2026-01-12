@@ -88,6 +88,7 @@ section{ padding: 9rem 9% 6rem; }
   cursor:pointer;
 }
 .navbar a{
+  border: 1px solid transparent;
   font-size: 1.5rem;
   margin-left: 2.3rem;
   color: var(--muted);
@@ -100,7 +101,11 @@ section{ padding: 9rem 9% 6rem; }
 /* Hover + active: szín + enyhe háttér + pici emelés */
 .navbar a:hover,
 .navbar a.active{
-  box-shadow: 0 8px 20px rgba(255,122,24,.12);
+  color: var(--fire);
+  background: rgba(255,122,24,.22);              /* láthatóbb */
+  border: 1px solid rgba(255,122,24,.30);        /* finom keret */
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(255,122,24,.18);  /* glow */
 }
 
 /* Animált aláhúzás hoverre is */
@@ -110,7 +115,7 @@ section{ padding: 9rem 9% 6rem; }
   left: .9rem;                   /* igazodik a paddinghez */
   right: .9rem;
   bottom: .35rem;
-  height: 2px;
+  height: 3px;
   background: var(--fire);
   border-radius: 999px;
   opacity: 0;
