@@ -45,7 +45,7 @@ section{ padding: 9rem 9% 6rem; }
 .header{
   position: fixed;
   top:0; left:0; width:100%;
-  padding: .6rem 7%;
+  padding: .9rem 9%;
   display:flex; align-items:center; justify-content:space-between;
   min-height: 72px;
   background: rgba(15,23,42,.55);
