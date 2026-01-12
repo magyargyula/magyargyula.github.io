@@ -98,6 +98,10 @@ section{ padding: 9rem 9% 6rem; }
 .navbar a{
   position: relative;
 }
+.navbar a:hover,
+.navbar a.active{
+  color: var(--fire);
+}
 
 .navbar a.active::after{
   content:"";
