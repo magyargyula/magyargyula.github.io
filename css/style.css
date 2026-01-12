@@ -101,7 +101,7 @@ section{ padding: 9rem 9% 6rem; }
 .navbar a:hover,
 .navbar a.active{
   color: var(--fire);
-  background: rgba(255,122,24,.10);
+  background: rgba(255,122,24,.8);
   transform: translateY(-1px);
 }
 
@@ -173,7 +173,7 @@ section{ padding: 9rem 9% 6rem; }
 .btn:hover{
   transform: translateY(-2px);
   filter: brightness(1.08);
-  border-color: rgba(255,122,24,.35);
+  border-color: rgba(255,122,24,.25);
 }
 
 .home-img{ display:flex; align-items:center; justify-content:center; }
