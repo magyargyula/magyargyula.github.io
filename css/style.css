@@ -173,7 +173,7 @@ section{ padding: 9rem 9% 6rem; }
 .btn:hover{
   transform: translateY(-2px);
   filter: brightness(1.08);
-  border-color: rgba(255,122,24,.25);
+  border-color: rgba(255,122,24,.35);
 }
 
 .home-img{ display:flex; align-items:center; justify-content:center; }
