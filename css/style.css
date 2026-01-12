@@ -100,9 +100,7 @@ section{ padding: 9rem 9% 6rem; }
 /* Hover + active: szín + enyhe háttér + pici emelés */
 .navbar a:hover,
 .navbar a.active{
-  color: var(--fire);
-  background: rgba(255,122,24,.8);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(255,122,24,.12);
 }
 
 /* Animált aláhúzás hoverre is */
@@ -111,7 +109,7 @@ section{ padding: 9rem 9% 6rem; }
   position:absolute;
   left: .9rem;                   /* igazodik a paddinghez */
   right: .9rem;
-  bottom: .2rem;
+  bottom: .35rem;
   height: 2px;
   background: var(--fire);
   border-radius: 999px;
