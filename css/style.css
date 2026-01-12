@@ -102,10 +102,10 @@ section{ padding: 9rem 9% 6rem; }
 .navbar a:hover,
 .navbar a.active{
   color: var(--fire);
-  background: rgba(255,122,24,.16);              /* láthatóbb */
+  background: rgba(255,122,24,.14);              /* láthatóbb */
   border: 1px solid rgba(255,122,24,.30);        /* finom keret */
   transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(255,122,24,.18);  /* glow */
+  box-shadow: 0 10px 26px rgba(255,122,24,.14);  /* glow */
 }
 
 /* Animált aláhúzás hoverre is */
