@@ -26,7 +26,7 @@ window.addEventListener("scroll", () => {
     const id = sec.getAttribute("id");
     if (top >= offset && top < offset + height) current = id;
   });
-  
+
   // ha az oldal aljára értél, mindig az utolsó szekció legyen aktív (Kapcsolat)
   const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
   if (nearBottom) current = sections[sections.length - 1].id;
