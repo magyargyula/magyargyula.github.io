@@ -179,17 +179,18 @@ section{ padding: 9rem 9% 6rem; }
   border-color: rgba(255,122,24,.35);
 }
 
-/* ✅ IGazi "ghost" gomb: áttetsző, nem gradient */
-.btn-ghost{
-  background: rgba(255,255,255,.03);
-  border-color: var(--border);
+.btn.btn-ghost{
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: none;
+  color: var(--text);
 }
 
-.btn-ghost:hover{
+.btn.btn-ghost:hover{
+  background: rgba(34,211,238,.08) !important;
+  border-color: rgba(34,211,238,.35);
   transform: translateY(-2px);
-  filter: none;
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,122,24,.35);
+  box-shadow: 0 14px 34px rgba(34,211,238,.12);
 }
 
 .home-img{ display:flex; align-items:center; justify-content:center; }
