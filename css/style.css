@@ -9,15 +9,15 @@
   --muted:#a9b6d6;
 
   /* jeges kék + tüzes narancs */
-  --ice:#00FA9A;
-  --fire:#87CEFA;
+  --ice:#6495ED;
+  --fire:#6495ED;
 
   /* fő kiemelés legyen jeges kék */
   --main: var(--ice);
 
   --border: rgba(255,255,255,.10);
   --shadow: 0 16px 40px rgba(0,0,0,.45);
-  --typed:#B0E0E6;
+  --typed:#6495ED;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
