@@ -408,10 +408,64 @@ section{ padding: 9rem 9% 6rem; }
   opacity: 1;
 }
 
+
+
+/* CV & Motivation section */
+.cv-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+.cv-card{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+.cv-card h3{ font-size: 1.8rem; margin-bottom: .6rem; }
+.cv-card p{ font-size: 1.45rem; color: var(--muted); }
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 1.2rem;
+}
+
+/* Smaller buttons used inside cards */
+.btn2{
+  display: inline-block;
+  padding: .9rem 1.2rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(34,211,238,.35);
+  background: linear-gradient(135deg, rgba(34,211,238,.14), rgba(255,122,24,.08));
+  color: var(--text);
+  font-size: 1.35rem;
+  font-weight: 700;
+  transition: transform .15s ease, filter .15s ease, border-color .15s ease;
+}
+.btn2:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  border-color: rgba(255,122,24,.35);
+}
+.btn2.btn-ghost{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: none;
+}
+.btn2.btn-ghost:hover{
+  filter: none;
+  background: rgba(34,211,238,.10);
+  border-color: rgba(34,211,238,.45);
+  transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (max-width: 1100px){
   .cards{ grid-template-columns: repeat(2, 1fr); }
   .projects-grid{ grid-template-columns: repeat(2, 1fr); }
+  .cv-grid{ grid-template-columns: 1fr; }
 }
 @media (max-width: 860px){
   #menu-icon{ display:block; }
@@ -434,6 +488,7 @@ section{ padding: 9rem 9% 6rem; }
   .header{ padding: .6rem 7%; }
   .footer{ padding: 2rem 7%; }
   .projects-grid{ grid-template-columns: 1fr; }
+  .cv-grid{ grid-template-columns: 1fr; }
   .cards{ grid-template-columns: 1fr; }
 }
 @media (max-width: 560px){
@@ -442,4 +497,3 @@ section{ padding: 9rem 9% 6rem; }
     max-width: 160px;
   }
 }
-
