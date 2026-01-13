@@ -413,8 +413,10 @@ section{ padding: 9rem 9% 6rem; }
 /* CV & Motivation section */
 .cv-grid{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 1.6rem;
+  max-width: 1200px;          /* szélesebb, egységesebb a többi szekcióval */
+  margin: 0 auto;            /* középre igazítás */
 }
 .cv-card{
   border: 1px solid var(--border);
@@ -496,4 +498,14 @@ section{ padding: 9rem 9% 6rem; }
     height: 34px;
     max-width: 160px;
   }
+}
+
+
+
+.cv-card .tags{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1.2rem;
 }
