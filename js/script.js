@@ -12,7 +12,7 @@ menuIcon.addEventListener("click", () => {
 
 // sticky header + active link scroll alapján
 const header = document.querySelector(".header");
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".navbar a");
 
 window.addEventListener("scroll", () => {
@@ -27,6 +27,10 @@ window.addEventListener("scroll", () => {
     if (top >= offset && top < offset + height) current = id;
   });
 
+  // ha az oldal aljára értél, mindig az utolsó szekció legyen aktív (Kapcsolat)
+  const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+  if (nearBottom) current = sections[sections.length - 1].id;
+
   navLinks.forEach(a => {
     a.classList.remove("active");
     if (current && a.getAttribute("href") === `#${current}`) a.classList.add("active");
@@ -37,7 +41,7 @@ window.addEventListener("scroll", () => {
   menuIcon.classList.remove("bx-x");
 });
 
-// Typed.js
+// Typed.js: contentReference[oaicite:2]{index=2}
 new Typed(".typed", {
   strings: [
   "Csoportvezető",
@@ -53,7 +57,7 @@ new Typed(".typed", {
   loop: true
 });
 
-// ScrollReveal
+// ScrollReveal: contentReference[oaicite:3]{index=3}
 ScrollReveal({
   distance: "30px",
   duration: 900,
@@ -101,3 +105,4 @@ document.addEventListener("keydown", (e) => {
     closePhoneModal();
   }
 });
+
