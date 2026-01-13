@@ -17,7 +17,7 @@
 
   --border: rgba(255,255,255,.10);
   --shadow: 0 16px 40px rgba(0,0,0,.45);
-  --typed: #4169E1;
+  --typed: #1E90FF;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
