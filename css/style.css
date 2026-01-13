@@ -161,13 +161,7 @@ section{ padding: 9rem 9% 6rem; }
 .socials a:hover{ transform: translateY(-2px); border-color: rgba(34,211,238,.35); }
 .socials i{ font-size: 2.2rem; }
 
-.cta { display:flex; gap:1.2rem; flex-wrap:wrap; }
-.cta .btn { min-width: 220px; text-align:center; } /* mobilon is kényelmesebb */
-@media (max-width: 560px){
-  .cta { flex-direction: column; }
-  .cta .btn { width: 100%; }
-}
-
+.cta{ display:flex; gap: 1.2rem; flex-wrap:wrap; }
 .btn{
   display:inline-block;
   padding: 1.2rem 1.6rem;
@@ -182,6 +176,19 @@ section{ padding: 9rem 9% 6rem; }
 .btn:hover{
   transform: translateY(-2px);
   filter: brightness(1.08);
+  border-color: rgba(255,122,24,.35);
+}
+
+/* ✅ IGazi "ghost" gomb: áttetsző, nem gradient */
+.btn-ghost{
+  background: rgba(255,255,255,.03);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover{
+  transform: translateY(-2px);
+  filter: none;
+  background: rgba(255,255,255,.06);
   border-color: rgba(255,122,24,.35);
 }
 
