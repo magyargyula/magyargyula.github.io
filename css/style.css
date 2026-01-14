@@ -1,23 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  --bg: #070b18;
-  --bg2: #0b1430;
-  --card: rgba(255, 255, 255, .04);
+  /* Base */
+  --c-bg: #070b18;
+  --c-text: #eaf0ff;
+  --c-muted: #a9b6d6;
 
-  --text: #eaf0ff;
-  --muted: #a9b6d6;
+  --c-border: rgba(255, 255, 255, .10);
+  --c-surface: rgba(255, 255, 255, .03);
+  --c-surface-2: rgba(255, 255, 255, .035);
+  --c-shadow: 0 16px 40px rgba(0, 0, 0, .45);
 
-  /* jeges kék + tüzes narancs */
-  --ice: #22d3ee;
-  --fire: #ff7a18;
+  /* Accents (RGB külön, hogy rgba() is menjen) */
+  --primary-rgb: 100, 149, 237;
+  /* #6495ED (CornflowerBlue) */
+  --secondary-rgb: 255, 122, 24;
+  /* narancs */
 
-  /* fő kiemelés legyen jeges kék */
-  --main: var(--ice);
+  --primary: rgb(var(--primary-rgb));
+  --secondary: rgb(var(--secondary-rgb));
 
-  --border: rgba(255, 255, 255, .10);
-  --shadow: 0 16px 40px rgba(0, 0, 0, .45);
-  --typed: #ff7a18;
+  /* “UI cél” változók – itt tudod egyben állítani */
+  --accent-main: var(--primary);
+  /* ikonok, strong, highlight */
+  --typed-color: var(--primary);
+  /* futó/typed szöveg */
+  --nav-active: var(--secondary);
+  /* navbar aktív/hover szöveg */
+  --tag-color: var(--primary);
+  /* badge/tag szöveg */
+
+  --social-icon: var(--primary);
+  /* social ikon színe */
 }
 
 * {
@@ -132,15 +146,12 @@ section {
 
 /* Hover + active: szín + enyhe háttér + pici emelés */
 .navbar a:hover,
+
 .navbar a.active {
-  color: var(--fire);
-  background: rgba(255, 122, 24, .14);
-  /* láthatóbb */
-  border: 1px solid rgba(255, 122, 24, .30);
-  /* finom keret */
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(255, 122, 24, .14);
-  /* glow */
+  color: var(--nav-active);
+  background: rgba(var(--secondary-rgb), .14);
+  border: 1px solid rgba(var(--secondary-rgb), .30);
+  box-shadow: 0 10px 26px rgba(var(--secondary-rgb), .14);
 }
 
 /* Animált aláhúzás hoverre is */
@@ -152,7 +163,7 @@ section {
   right: .9rem;
   bottom: .35rem;
   height: 2px;
-  background: var(--fire);
+  background: var(--nav-active);
   border-radius: 999px;
   opacity: 0;
   transform: scaleX(.6);
@@ -192,7 +203,7 @@ section {
 }
 
 .typed {
-  color: var(--typed);
+  color: var(--typed-color);
   font-weight: 800;
 }
 
@@ -221,6 +232,7 @@ section {
 
 .socials i {
   font-size: 2.2rem;
+  color: var(--social-icon);
 }
 
 .cta {
@@ -230,21 +242,14 @@ section {
 }
 
 .btn {
-  display: inline-block;
-  padding: 1.2rem 1.6rem;
-  border-radius: 1.2rem;
-  border: 1px solid rgba(34, 211, 238, .35);
-  background: linear-gradient(135deg, rgba(34, 211, 238, .16), rgba(255, 122, 24, .10));
-  color: var(--text);
-  font-size: 1.5rem;
-  font-weight: 700;
-  transition: transform .15s ease, filter .15s ease, border-color .15s ease;
+  border: 1px solid rgba(var(--primary-rgb), .35);
+  background: linear-gradient(135deg,
+      rgba(var(--primary-rgb), .16),
+      rgba(var(--secondary-rgb), .10));
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.08);
-  border-color: rgba(255, 122, 24, .35);
+  border-color: rgba(var(--secondary-rgb), .35);
 }
 
 .btn.btn-ghost {
@@ -320,7 +325,7 @@ section {
 }
 
 .bullets strong {
-  color: var(--main);
+  color: var(--accent-main);
   font-weight: 700;
 }
 
@@ -339,9 +344,9 @@ section {
   transition: transform .15s ease, border-color .15s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(34, 211, 238, .25);
+.card:hover,
+.project:hover {
+  border-color: rgba(var(--primary-rgb), .25);
 }
 
 .card i {
@@ -393,8 +398,8 @@ section {
 
 .tag {
   font-size: 1.2rem;
-  color: var(--ice);
-  border: 1px solid rgba(34, 211, 238, .28);
+  color: var(--tag-color);
+  border: 1px solid rgba(var(--primary-rgb), .28);
   padding: .4rem .8rem;
   border-radius: 999px;
   white-space: nowrap;
@@ -579,8 +584,6 @@ section {
 .modal.is-open .modal__backdrop {
   opacity: 1;
 }
-
-
 
 /* CV & Motivation section */
 .cv-grid {
