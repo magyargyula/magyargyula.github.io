@@ -521,7 +521,7 @@ section{ padding: 9rem 9% 6rem; }
     top:100%; left:0; width:100%;
     padding: 1.2rem 9%;
     display:none;
-    background: rgba(15,23,42,1);
+    background: rgba(15,23,42,.025);
     border-bottom: 1px solid rgba(255,255,255,.10);
   }
   .navbar.active{ display:block; }
