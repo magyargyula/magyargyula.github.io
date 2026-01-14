@@ -521,8 +521,8 @@ section{ padding: 9rem 9% 6rem; }
     top:100%; left:0; width:100%;
     padding: 1.2rem 9%;
     display:none;
-    background: transparent; /*rgba(15,23,42,.92);*/
-    border-bottom: none; /*1px solid rgba(255,255,255,.10);*/
+    background: rgba(15,23,42,.92);
+    border-bottom: 1px solid rgba(255,255,255,.10);
   }
   .navbar.active{ display:block; }
   .navbar a{ display:block; margin: 1.2rem 0; font-size: 1.7rem; }
