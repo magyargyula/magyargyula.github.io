@@ -18,8 +18,8 @@
   --surface2: rgba(255,255,255,.035);
 
   /* Accent colors (RGB so rgba() works everywhere) */
-  --ice-rgb: 34, 211, 238;     /* #22d3ee */
-  --fire-rgb: 255, 122, 24;    /* #ff7a18 */
+  --ice-rgb: 43,255,136; /*2bff88*; fő zöld/ /*34, 211, 238; #22d3ee */
+  --fire-rgb: 	22, 200, 107; /*#16c86b sötétebb zöld árnyék*//*255, 122, 24; #ff7a18 */
   --ice: rgb(var(--ice-rgb));
   --fire: rgb(var(--fire-rgb));
 
