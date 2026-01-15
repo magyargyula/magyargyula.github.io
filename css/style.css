@@ -317,7 +317,7 @@ section {
 /* Fallback avatar sits exactly where the image would be */
 .hero-photo .avatar {
   position: absolute;
-  inset: 4rem;
+  inset: 3rem;
   z-index: 2;
 }
 
