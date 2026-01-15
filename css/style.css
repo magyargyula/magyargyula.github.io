@@ -295,8 +295,8 @@ section {
 
 .hero-photo {
   position: relative;
-  width: 36rem; /*36*/
-  height: 36rem; /*36*/
+  width: 44rem; /*36*/
+  height: 44rem; /*36*/
   display: grid;
   place-items: center;
 }
