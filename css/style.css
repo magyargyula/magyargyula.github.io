@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif
+  font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
   background:
     radial-gradient(900px 650px at 18% 18%, rgba(var(--accent-rgb), .18), transparent 55%),
     radial-gradient(900px 650px at 85% 20%, rgba(var(--ice-rgb), .16), transparent 55%),
