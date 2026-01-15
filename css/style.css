@@ -206,6 +206,7 @@ section {
 .typed {
   color: var(--typed);
   font-weight: 800;
+  font-style: outline;
 }
 
 .socials {
