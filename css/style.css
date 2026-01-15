@@ -1,25 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
-:root{
+:root {
   /* =========
      Theme
      ========= */
-  --bg:#070b18;
-  --bg2:#0b1430;
+  --bg: #070b18;
+  --bg2: #0b1430;
 
-  --text:#eaf0ff;
-  --muted:#a9b6d6;
+  --text: #eaf0ff;
+  --muted: #a9b6d6;
 
-  --border: rgba(255,255,255,.10);
-  --shadow: 0 16px 40px rgba(0,0,0,.45);
+  --border: rgba(255, 255, 255, .10);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .45);
 
   /* Surfaces */
-  --surface: rgba(255,255,255,.03);
-  --surface2: rgba(255,255,255,.035);
+  --surface: rgba(255, 255, 255, .03);
+  --surface2: rgba(255, 255, 255, .035);
 
   /* Accent colors (RGB so rgba() works everywhere) */
-  --ice-rgb: 43,255,136; /*2bff88*; fő zöld/ /*34, 211, 238; #22d3ee */
-  --fire-rgb: 	22, 200, 107; /*#16c86b sötétebb zöld árnyék*//*255, 122, 24; #ff7a18 */
+  --ice-rgb: 43, 255, 136;
+  /*2bff88*; fő zöld/ /*34, 211, 238; #22d3ee */
+  --fire-rgb: 22, 200, 107;
+  /*#16c86b sötétebb zöld árnyék*/
+  /*255, 122, 24; #ff7a18 */
   --ice: rgb(var(--ice-rgb));
   --fire: rgb(var(--fire-rgb));
 
@@ -32,7 +35,7 @@
 
   /* Component tokens */
   --header-bg: transparent;
-  --header-bg-sticky: rgba(15,23,42,.70);
+  --header-bg-sticky: rgba(15, 23, 42, .70);
 
   --btn-grad-a: rgba(var(--ice-rgb), .16);
   --btn-grad-b: rgba(var(--fire-rgb), .10);
@@ -41,6 +44,7 @@
   --social-icon: var(--main);
   --ring-color: var(--ice);
 }
+
 /* Reset */
 * {
   margin: 0;
@@ -82,11 +86,15 @@ section {
   color: var(--muted);
 }
 
-.header{
+.header {
   position: fixed;
-  top:0; left:0; width:100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: .5rem 9%;
-  display:flex; align-items:center; justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 56px;
 
   /* Blend into background (no visible bar) */
@@ -94,11 +102,11 @@ section {
   border-bottom: 1px solid transparent;
   backdrop-filter: none;
 
-  z-index:1000;
+  z-index: 1000;
 }
 
 /* Only show a subtle “glass” header after scrolling */
-.header.sticky{
+.header.sticky {
   background: var(--header-bg-sticky);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
@@ -206,7 +214,6 @@ section {
 .typed {
   color: var(--typed);
   font-weight: 800;
-  text-decoration: outline;
 }
 
 .socials {
@@ -243,12 +250,13 @@ section {
   flex-wrap: wrap;
 }
 
-.btn{
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 19rem;               /* equal length in Hero */
+  min-width: 19rem;
+  /* equal length in Hero */
   padding: 1.15rem 1.8rem;
 
   border-radius: 1.4rem;
@@ -265,21 +273,21 @@ section {
   transition: transform .15s ease, filter .15s ease, border-color .15s ease, background .15s ease;
 }
 
-.btn:hover{
+.btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.06);
   border-color: rgba(var(--fire-rgb), .35);
 }
 
 /* Ghost variant (keeps your style, only uses theme colors) */
-.btn.btn-ghost{
+.btn.btn-ghost {
   background: transparent !important;
-  border: 1px solid rgba(255,255,255,.16);
+  border: 1px solid rgba(255, 255, 255, .16);
   box-shadow: none;
   color: var(--text);
 }
 
-.btn.btn-ghost:hover{
+.btn.btn-ghost:hover {
   background: var(--ghost-hover) !important;
   border-color: rgba(var(--ice-rgb), .35);
   box-shadow: 0 14px 34px rgba(var(--ice-rgb), .12);
@@ -293,7 +301,7 @@ section {
   justify-content: center;
 }
 
-.hero-photo{
+.hero-photo {
   position: relative;
   width: 36rem;
   height: 36rem;
@@ -302,20 +310,20 @@ section {
 }
 
 /* Circular photo (no frame) */
-.hero-photo__img{
+.hero-photo__img {
   width: 28rem;
   height: 28rem;
   border-radius: 50%;
   object-fit: cover;
   border: none;
-  box-shadow: 0 18px 55px rgba(0,0,0,.55);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .55);
   display: block;
   position: relative;
   z-index: 2;
 }
 
 /* Fallback avatar sits exactly where the image would be */
-.hero-photo .avatar{
+.hero-photo .avatar {
   position: absolute;
   inset: 4rem;
   z-index: 2;
@@ -323,64 +331,73 @@ section {
 
 /* Orbit / ring animation */
 .hero-photo::before,
-.hero-photo::after{
+.hero-photo::after {
   content: "";
   position: absolute;
-  inset: .6rem;          /* ring size */
+  inset: .6rem;
+  /* ring size */
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
 
   /* draw only a thin ring using mask */
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
-          mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
 }
 
 /* long, thin ice arcs */
-.hero-photo::before{
-  background: conic-gradient(
-    from 200deg,
-    transparent 0 10%,
-    rgba(var(--ice-rgb), 1) 10% 38%,
-    transparent 38% 62%,
-    rgba(var(--ice-rgb), 1) 62% 82%,
-    transparent 82% 100%
-  );
+.hero-photo::before {
+  background: conic-gradient(from 200deg,
+      transparent 0 10%,
+      rgba(var(--ice-rgb), 1) 10% 38%,
+      transparent 38% 62%,
+      rgba(var(--ice-rgb), 1) 62% 82%,
+      transparent 82% 100%);
   filter: drop-shadow(0 0 18px rgba(var(--ice-rgb), .22));
   opacity: .95;
   animation: ringSpin 7.5s linear infinite;
 }
 
 /* secondary (fire) arc layer, slightly offset + thinner */
-.hero-photo::after{
+.hero-photo::after {
   inset: 1.3rem;
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-          mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  background: conic-gradient(
-    from 20deg,
-    transparent 0 55%,
-    rgba(var(--fire-rgb), 1) 55% 74%,
-    transparent 74% 100%
-  );
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  background: conic-gradient(from 20deg,
+      transparent 0 55%,
+      rgba(var(--fire-rgb), 1) 55% 74%,
+      transparent 74% 100%);
   filter: drop-shadow(0 0 14px rgba(var(--fire-rgb), .18));
   opacity: .70;
   animation: ringSpinReverse 10s linear infinite;
 }
 
-@keyframes ringSpin{
-  to { transform: rotate(360deg); }
+@keyframes ringSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
-@keyframes ringSpinReverse{
-  to { transform: rotate(-360deg); }
+
+@keyframes ringSpinReverse {
+  to {
+    transform: rotate(-360deg);
+  }
 }
-.avatar{
-  width: 28rem; height: 28rem;
+
+.avatar {
+  width: 28rem;
+  height: 28rem;
   border-radius: 50%;
-  background: rgba(255,255,255,.04);
+  background: rgba(255, 255, 255, .04);
   box-shadow: var(--shadow);
-  display:grid; place-items:center;
+  display: grid;
+  place-items: center;
 }
-.avatar i{ font-size: 8rem; color: rgba(var(--ice-rgb), .85); }
+
+.avatar i {
+  font-size: 8rem;
+  color: rgba(var(--ice-rgb), .85);
+}
 
 .about-box,
 .contact-box {
@@ -576,6 +593,7 @@ section {
   opacity: 0;
   transition: opacity .18s ease;
 }
+
 .modal.is-open .modal__backdrop {
   opacity: 1;
 }
@@ -756,9 +774,20 @@ section {
   }
 }
 
-@media (max-width: 860px){.hero-photo{ width: 28rem; height: 28rem; }
-  .hero-photo__img{ width: 22rem; height: 22rem; }
-  .hero-photo .avatar{ inset: 3rem; }
+@media (max-width: 860px) {
+  .hero-photo {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  .hero-photo__img {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .hero-photo .avatar {
+    inset: 3rem;
+  }
 }
 
 @media (max-width: 560px) {
