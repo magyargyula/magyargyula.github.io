@@ -28,7 +28,7 @@
 
   /* Primary accent across UI */
   --main: var(--ice);
-  --typed: var(255,122,24); /*--fire volt*/
+  --typed: var(255,126,0); /*--fire volt*/
 
   /* Used for the warm background glow */
   --accent-rgb: var(--fire-rgb);
@@ -252,11 +252,6 @@ section {
   gap: 1.2rem;
   flex-wrap: wrap;
   align-items:center;
-  /*Ezt vedd ki, ha elromli*/
-  padding: 1.15rem 1.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(var(--primary-rgb), .55);
-  background: linear-gradient(135deg, rgba(var(--primary-rgb), .26), rgba(var(--secondary-rgb), .10));
 }
 
 .btn{
@@ -300,16 +295,16 @@ section {
 
 .hero-photo {
   position: relative;
-  width: 30rem; /*36*/
-  height: 30rem; /*36*/
+  width: 36rem; /*36*/
+  height: 36rem; /*36*/
   display: grid;
   place-items: center;
 }
 
 /* Circular photo (no frame) */
 .hero-photo__img {
-  width: 29rem; /*28*/
-  height: 29rem;
+  width: 28rem; /*28*/
+  height: 28rem;
   border-radius: 50%;
   object-fit: cover;
   border: none;
@@ -338,8 +333,8 @@ section {
   z-index: 1;
 
   /* draw only a thin ring using mask */
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
 }
 
 /* long, thin ice arcs */
@@ -358,8 +353,8 @@ section {
 /* secondary (fire) arc layer, slightly offset + thinner */
 .hero-photo::after {
   inset: 1.3rem;
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   background: conic-gradient(from 20deg,
       transparent 0 55%,
       rgba(var(--fire-rgb), 1) 55% 74%,
