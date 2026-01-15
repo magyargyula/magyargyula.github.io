@@ -216,34 +216,32 @@ section {
   font-weight: 800;
 }
 
-.socials {
-  display: flex;
+.socials{
+  display:flex;
   gap: 1.2rem;
-  margin: 1.2rem 0 2.2rem;
 }
 
-.socials a {
-  width: 4.4rem;
-  height: 4.4rem;
+.socials a{
+  width: 4.6rem;
+  height: 4.6rem;
   display: grid;
   place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 1.2rem;
-  background: rgba(255, 255, 255, .03);
-  box-shadow: var(--shadow);
-  transition: transform .15s ease, border-color .15s ease;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--ice-rgb), .45);
+  background: rgba(255,255,255,.03);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
 }
 
-.socials a:hover {
-  transform: translateY(-2px);
-  border-color: rgba(var(--ice-rgb), .35);
-  background: rgba(var(--primary-rgb), .10);
-  box-shadow: 0 10px 30px rgba(var(--primary-rgb), .18);
-}
-
-.socials i {
+.socials a i{
   font-size: 2.2rem;
-  color: var(--social-icon);
+  color: rgba(var(--ice-rgb), .95);
+}
+
+.socials a:hover{
+  transform: translateY(-2px);
+  border-color: rgba(var(--ice-rgb), .85);
+  background: rgba(var(--ice-rgb), .08);
 }
 
 /* Hero CTA gombok */
