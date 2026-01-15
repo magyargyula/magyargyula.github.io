@@ -303,8 +303,8 @@ section {
 
 /* Circular photo (no frame) */
 .hero-photo__img {
-  width: 28rem;
-  height: 28rem;
+  width: 36rem; /*28*/
+  height: 36rem; /*28*/
   border-radius: 50%;
   object-fit: cover;
   border: none;
