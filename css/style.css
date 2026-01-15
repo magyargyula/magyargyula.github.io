@@ -252,6 +252,11 @@ section {
   gap: 1.2rem;
   flex-wrap: wrap;
   align-items:center;
+  /*Ezt vedd ki, ha elromli*/
+  padding: 1.15rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--primary-rgb), .55);
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), .26), rgba(var(--secondary-rgb), .10));
 }
 
 .btn{
