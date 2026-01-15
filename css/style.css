@@ -18,13 +18,14 @@
   --surface2: rgba(255, 255, 255, .035);
 
   /* Accent colors (RGB so rgba() works everywhere) */
-  --ice-rgb: 43, 255, 136;
-  /*2bff88*; fő zöld/ /*34, 211, 238; #22d3ee */
-  --fire-rgb: 22, 200, 107;
-  /*#16c86b sötétebb zöld árnyék*/
-  /*255, 122, 24; #ff7a18 */
+  --ice-rgb: 43, 255, 136; /* szürke */
+  --fire-rgb: 22, 200, 107; /* kék */
+  --orange-rgb: 255, 122, 24; /* narancs */
+  --grass-rgb: 72, 255, 162;/* zöld 48ffa2*/
   --ice: rgb(var(--ice-rgb));
   --fire: rgb(var(--fire-rgb));
+  --grass: rgb(var(--grass-rgb));
+  --orange: rgb(var(--orange-rgb));
 
   /* Primary accent across UI */
   --main: var(--ice);
@@ -211,14 +212,24 @@ section {
   margin: 1.3rem 0 2.2rem;
 }
 
+/* Typed – outline (stroke) stílus */
 .typed {
-  color: var(255,126,0);
+  font-size: 3.8rem;                 /* méret (növeld/csökkentsd) */
   font-weight: 800;
+  letter-spacing: .5px;
+
+  color: transparent;                /* ne legyen kitöltés (--fire) volt*/
+  -webkit-text-stroke: 1px var(--ice); /* körvonal színe + vastagság */
+  text-stroke: 2px var(--ice);       /* (nem mindenhol működik, de oké) */
+
+  /* extra “glow” ha szeretnéd */
+  text-shadow: 0 0 18px rgba(var(--ice-rgb), .22);
 }
 
 .socials{
   display:flex;
   gap: 1.2rem;
+  margin: 1.2rem 0 3.2rem;  /* a 3.2rem a lényeg (növeld 3.6–4.5-ig ha kell) ikon sor és a CTA gombok között több hely */
 }
 
 .socials a{
@@ -236,7 +247,7 @@ section {
 .socials a i{
   font-size: 2.2rem;
   color: rgba(var(--ice-rgb), .95);
-  margin: 1.2rem 0 3.2rem; /* a 3.2rem a lényeg (növeld 3.6–4.5-ig ha kell) ikon sor és a CTA gombok között több hely */
+  margin: 0
 }
 
 .socials a:hover{
@@ -252,9 +263,51 @@ section {
   flex-wrap: wrap;
   align-items:center;
 }
+/* CTA ghost – navbar jelleg (áttetsző, kapszula, finom hover) */
+.cta .btn.btn-ghost{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.18);
+  color: var(--text);
+  box-shadow: none;
+}
+
+/* hover/active érzés mint a navbar */
+.cta .btn.btn-ghost:hover,
+.cta .btn.btn-ghost:focus-visible{
+  background: rgba(var(--accent-rgb), .14);         /* mint navbar*/
+  border-color: rgba(var(--accent-rgb), .30);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(var(--accent-rgb), .14);
+  outline: none;
+}
+
+/* opcionális: “aláhúzás” effekt (navbar ::after feeling) */
+.cta .btn.btn-ghost{
+  position: relative;
+}
+.cta .btn.btn-ghost::after{
+  content:"";
+  position:absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: .55rem;
+  height: 3px;
+  background: var(--fire);
+  border-radius: 999px;
+  opacity: 0;
+  transform: scaleX(.7);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.cta .btn.btn-ghost:hover::after,
+.cta .btn.btn-ghost:focus-visible::after{
+  opacity: .95;
+  transform: scaleX(1);
+}
 
 .btn{
   display:inline-flex;
+  position: relative;
+  overflow: hidden; /* kell a fénycsíkhoz */
   align-items:center;
   justify-content:center;
   padding: 1.15rem 1.6rem;
@@ -268,11 +321,38 @@ section {
   box-shadow: 0 10px 26px rgba(0,0,0,.22);
   transition: transform .15s ease, filter .15s ease, border-color .15s ease, box-shadow .15s ease, background .15s ease;
 }
+
+/* finom fénycsík animáció hoverre */
+.btn::before{
+  content:"";
+  position:absolute;
+  inset: -2px;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(var(--primary-rgb), .25) 35%,
+    rgba(var(--secondary-rgb), .18) 50%,
+    rgba(var(--primary-rgb), .25) 65%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+  pointer-events:none;
+}
+
+.btn:hover::before{
+  transform: translateX(120%);
+}
+
+/* plusz “glow” érzés hoverre */
 .btn:hover{
   transform: translateY(-2px);
   filter: brightness(1.06);
   border-color: rgba(var(--secondary-rgb), .45);
-  box-shadow: 0 14px 34px rgba(0,0,0,.30);
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.30),
+    0 0 0 1px rgba(var(--primary-rgb), .18),
+    0 0 26px rgba(var(--primary-rgb), .12);
 }
 .btn.btn-ghost{
   background: rgba(255,255,255,.02) !important;
@@ -287,6 +367,7 @@ section {
 }
 
 .home-img {
+  margin-left: auto;   /* kitolja jobbra */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,7 +432,7 @@ section {
 
 /* secondary (fire) arc layer, slightly offset + thinner */
 .hero-photo::after {
-  inset: 1.8rem;
+  inset: 2.4rem;
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   background: conic-gradient(from 20deg,
@@ -736,6 +817,24 @@ section {
   border: 1px solid rgba(255, 255, 255, .18);
   box-shadow: none;
 }
+.btn2.btn-ghost::after{
+  content:"";
+  position:absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: .55rem;
+  height: 2px;
+  background: var(--fire);
+  border-radius: 999px;
+  opacity: 0;
+  transform: scaleX(.7);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.btn2.btn-ghost:hover::after,
+.btn2.btn-ghost:focus-visible::after{
+  opacity: .95;
+  transform: scaleX(1);
+}
 
 .btn2.btn-ghost:hover {
   filter: none;
@@ -752,6 +851,14 @@ section {
   align-items: flex-start;
   margin-top: 1.2rem;
 }
+.cv-card .tags .btn2 {
+  width: 200px;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* kell a fénycsíkhoz */
+  align-items:center;
+  border-radius: 999px;
+}
 
 /* Responsive */
 @media (max-width: 1100px) {
@@ -767,20 +874,36 @@ section {
     grid-template-columns: 1fr;
   }
 }
-
+/* Mobil layout:  */
 @media (max-width: 860px) {
+  .home {
+    flex-direction: column;
+    gap: 2.2rem;
+    padding-top: 11rem; /* ha fix header van */
+  }
+
+  .home-content { order: 1; width: 100%; }
+  .home-img { order: 2; width: 100%; display: grid; place-items: center; }
+
+  /* a kör/kép ne legyen túl nagy mobilon */
   .hero-photo {
-    width: 28rem;
-    height: 28rem;
+    width: min(38rem, 88vw);
+    height: min(38rem, 88vw);
   }
 
   .hero-photo__img {
-    width: 22rem;
-    height: 22rem;
+    width: min(30rem, 70vw);
+    height: min(30rem, 70vw);
   }
 
   .hero-photo .avatar {
     inset: 3rem;
+  }
+
+  .typed{
+    font-size: 2.8rem;
+    -webkit-text-stroke: 1.5px var(--ice);
+    text-stroke: 1.5px var(--ice);
   }
 }
 

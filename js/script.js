@@ -44,12 +44,11 @@ window.addEventListener("scroll", () => {
 // Typed.js: contentReference[oaicite:2]{index=2}
 new Typed(".typed", {
   strings: [
-  "Csoportvezető",
-  "Irodai és IT koordinátor",
-  "Junior rendszerüzemeltető",
+  "Back Office irodai pozíciók",
+  "IT Junior rendszerüzemeltető",
   "DB üzemeltető (MS SQL)",
   "IT support",
-  "Hobbi szervíz: (laptop/telefon/okosóra)"
+  "Laptop/mobiltelefon szervízes"
 ],
   typeSpeed: 55,
   backSpeed: 35,
