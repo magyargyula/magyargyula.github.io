@@ -28,7 +28,7 @@
 
   /* Primary accent across UI */
   --main: var(--ice);
-  --typed: var(--fire);
+  --typed: var(255,122,24); /*--fire volt*/
 
   /* Used for the warm background glow */
   --accent-rgb: var(--fire-rgb);
