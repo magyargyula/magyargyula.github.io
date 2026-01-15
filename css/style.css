@@ -295,16 +295,16 @@ section {
 
 .hero-photo {
   position: relative;
-  width: 42rem; /*36*/
-  height: 42rem; /*36*/
+  width: 40rem; /*36*/
+  height: 40rem; /*36*/
   display: grid;
   place-items: center;
 }
 
 /* Circular photo (no frame) */
 .hero-photo__img {
-  width: 38rem; /*28*/
-  height: 38rem;
+  width: 34rem; /*28*/
+  height: 34rem;
   border-radius: 50%;
   object-fit: cover;
   border: none;
