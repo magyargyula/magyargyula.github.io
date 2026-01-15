@@ -28,7 +28,7 @@
 
   /* Primary accent across UI */
   --main: var(--ice);
-  --typed: var(255,126,0); /*--fire volt*/
+  --typed: var(-fire); 
 
   /* Used for the warm background glow */
   --accent-rgb: var(--fire-rgb);
@@ -212,7 +212,7 @@ section {
 }
 
 .typed {
-  color: var(--typed);
+  color: var(255,126,0);
   font-weight: 800;
 }
 
