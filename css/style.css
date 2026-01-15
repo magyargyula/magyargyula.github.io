@@ -237,6 +237,8 @@ section {
 .socials a:hover {
   transform: translateY(-2px);
   border-color: rgba(var(--ice-rgb), .35);
+  background: rgba(var(--primary-rgb), .10);
+  box-shadow: 0 10px 30px rgba(var(--primary-rgb), .18);
 }
 
 .socials i {
@@ -244,56 +246,46 @@ section {
   color: var(--social-icon);
 }
 
+/* Hero CTA gombok */
 .cta {
   display: flex;
   gap: 1.2rem;
   flex-wrap: wrap;
+  align-items:center;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 19rem;
-  /* equal length in Hero */
-  padding: 1.15rem 1.8rem;
-
-  border-radius: 1.4rem;
-  border: 1px solid rgba(var(--ice-rgb), .35);
-  background: linear-gradient(135deg, var(--btn-grad-a), var(--btn-grad-b));
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 1.15rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--primary-rgb), .55);
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), .26), rgba(var(--secondary-rgb), .10));
   color: var(--text);
-
-  box-shadow: var(--shadow);
-
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: .2px;
-
-  transition: transform .15s ease, filter .15s ease, border-color .15s ease, background .15s ease;
+  min-width: 190px;                 /* azonos hossz */
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  transition: transform .15s ease, filter .15s ease, border-color .15s ease, box-shadow .15s ease, background .15s ease;
 }
-
-.btn:hover {
+.btn:hover{
   transform: translateY(-2px);
   filter: brightness(1.06);
-  border-color: rgba(var(--fire-rgb), .35);
+  border-color: rgba(var(--secondary-rgb), .45);
+  box-shadow: 0 14px 34px rgba(0,0,0,.30);
 }
-
-/* Ghost variant (keeps your style, only uses theme colors) */
-.btn.btn-ghost {
-  background: transparent !important;
-  border: 1px solid rgba(255, 255, 255, .16);
+.btn.btn-ghost{
+  background: rgba(255,255,255,.02) !important;
+  border: 1px solid rgba(255,255,255,.18);
   box-shadow: none;
-  color: var(--text);
+  min-width: 190px;                 /* azonos hossz */
 }
-
-.btn.btn-ghost:hover {
-  background: var(--ghost-hover) !important;
-  border-color: rgba(var(--ice-rgb), .35);
-  box-shadow: 0 14px 34px rgba(var(--ice-rgb), .12);
-  transform: translateY(-2px);
+.btn.btn-ghost:hover{
+  background: rgba(var(--primary-rgb), .10) !important;
+  border-color: rgba(var(--primary-rgb), .55);
+  box-shadow: 0 14px 34px rgba(var(--primary-rgb), .12);
 }
-
 
 .home-img {
   display: flex;
@@ -430,6 +422,7 @@ section {
   font-weight: 700;
 }
 
+/* ====== SKILLS / CARDS ====== */
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -466,6 +459,7 @@ section {
   color: var(--muted);
 }
 
+/* ====== PROJECTS ====== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -541,6 +535,7 @@ section {
   margin-top: 1.2rem;
 }
 
+/* ====== CONTACT / FOOTER ====== */
 .footer {
   padding: 2.2rem 9%;
   display: flex;
@@ -570,7 +565,7 @@ section {
   font-size: 2rem;
 }
 
-/* Modal */
+/* ====== MODAL ====== */
 .modal {
   position: fixed;
   inset: 0;
