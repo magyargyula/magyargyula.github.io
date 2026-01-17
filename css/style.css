@@ -762,7 +762,7 @@ section {
 /* CV & Motivation section */
 .cv-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(320, 1fr));
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 1.6rem;
   max-width: 1200px;
   margin: 0 auto;
