@@ -48,7 +48,7 @@ new Typed(".typed", {
   "IT Junior rendszerüzemeltető",
   "DB üzemeltető (MS SQL)",
   "IT support",
-  "Laptop/mobiltelefon szervízes"
+  "Laptop/mobiltelefon szervíz"
 ],
   typeSpeed: 55,
   backSpeed: 35,
