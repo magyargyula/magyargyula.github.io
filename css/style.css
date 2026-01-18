@@ -614,6 +614,27 @@ section {
   opacity: .85;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mini-btn {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .15);
+  text-decoration: none;
+}
+
+.mini-btn:hover {
+  border-color: rgba(255, 255, 255, .25);
+}
+
+/* ====== CONTACT ====== */
+
 .note {
   margin-top: 1.6rem;
   color: var(--muted);
