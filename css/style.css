@@ -1010,9 +1010,4 @@ project-thumbs{
   .cards {
     grid-template-columns: 1fr;
   }
-
-  .logo.logo-img img {
-    height: 34px;
-    max-width: 160px;
-  }
 }
