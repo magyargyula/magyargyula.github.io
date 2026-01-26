@@ -218,6 +218,19 @@ section {
   margin: 1.3rem 0 2.2rem;
 }
 
+/* Aktív profil szöveg */
+.active-profile{
+  margin: 8px 0 10px;
+  font-size: 1.35rem;
+  color: var(--muted);
+}
+
+.active-profile strong{
+  color: rgba(var(--primary-rgb), .95);
+  text-shadow: 0 0 16px rgba(var(--primary-rgb), .18);
+}
+
+
 /* Typed – outline (stroke) stílus */
 .typed {
   font-size: 3.8rem;
@@ -340,7 +353,6 @@ section {
 .cta-main{
   margin-top: 34px;  /* növeld 34px-re ha még kell */
 }
-
 
 .btn {
   display: inline-flex;

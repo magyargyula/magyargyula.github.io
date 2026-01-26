@@ -57,8 +57,6 @@
         (képzések + projektek). Ügyfél- és belső kommunikáció, utánkövetés, dokumentálás.
       </p>
 
-      </p>
-
       <div class="socials">
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank" rel="noreferrer" aria-label="LinkedIn">
@@ -77,15 +75,10 @@
           <i class="bx bxl-facebook"></i>
         </a>
       </div>
-
-      <!-- <div class="cta btn-ghost profile-switch" role="tablist" aria-label="Célzott profil választó">
-        <button class="btn btn-ghost is-active" type="button" data-profile="operations">Operations</button>
-        <button class="btn btn-ghost" type="button" data-profile="supervisor">Supervisor</button>
-        <button class="btn btn-ghost" type="button" data-profile="it">IT Support</button>
-      </div> -->
-      <p>
-      <h2>Válassz Profilt:</h2>
+      <p class="active-profile">
+        A kiválasztott <strong id="activeProfileLabel">Operáció</strong> nézethez tartozó dokumentumok érhetők el.
       </p>
+
 
       <div class="btn-ghost profile-tabs" role="tablist" aria-label="Célzott profilok">
         <button class="profile-tab is-active" data-profile="operations" type="button">Operáció</button>
@@ -257,7 +250,10 @@
     <div class="cv-grid">
       <div class="project cv-card" style="cursor:default;">
         <h3>Önéletrajz</h3>
-        <p>Letölthető egy tömör HR verzió és egy részletesebb, általános álláskeresői verzió.</p>
+        <p id="cvDesc">
+          A kiválasztott <strong><span class="activeProfileLabelClone">Operáció</span></strong> profilhoz tartozó önéletrajz tölthető le.
+        </p>
+
         <div class="tags">
           <a class="btn2 btn-ghost" id="cvLink2" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank"
             rel="noopener" download>
@@ -269,9 +265,8 @@
 
       <div class="project cv-card" style="cursor:default;">
         <h3>Motivációs levél</h3>
-        <p style="margin-top:.4rem;">
-          Az alábbi motivációs levél egy általános bemutatkozó anyag HR szakemberek számára.
-          Konkrét pozíció esetén a tartalom célzottan módosításra kerül.
+        <p id="mlDesc" style="margin-top:.4rem;">
+          A kiválasztott <strong><span class="activeProfileLabelClone">Operáció</span></strong> profilhoz tartozó motivációs levél tölthető le.
         </p>
 
         <div class="tags">
