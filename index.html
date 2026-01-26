@@ -7,7 +7,7 @@
   <title>Magyar Gyula – Portfólió</title>
   <meta name="description"
     content="Magyar Gyula – portfólió. IT Support / junior üzemeltetés irány, DB (MS SQL) alapok, irodai és IT koordináció, ügyfélkezelés, Csoportvezető,  dokumentáltság és megbízhatóság, hobbi szervíz laptop telefon okosóra." />
-    <!-- Favicons -->
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico?v=3" sizes="any">
   <link rel="icon" type="image/png" href="/img/favicon-32.png?v=3" sizes="32x32">
   <link rel="icon" type="image/png" href="/img/favicon-16.png?v=3" sizes="16x16">
@@ -44,21 +44,24 @@
       <h3>Szia!</h3>
       <h1>Magyar Gyula</h1> &nbsp; <h3>vagyok</h3>
 
-      <h3>Célzott pozíciók:</h3>
+      <h3 id="targetTitle">
+        Célzott <span id="targetType">operációs</span> pozíciók:
+      </h3>
       <span class="typed" aria-label="Pozíciók gépelt animációval"></span>
+
       <br>
 
       <p class="lead">
         Precíz, megbízható, erősen rendszerszemléletű munkavégzés. Magas igényszint a minőségre, következetesség és
-        felelősségvállalás.
-        Konfliktusokban megoldásfókuszú hozzáállás. Üzemeltetés/DB képzések + erős koordináció.
-        Ügyfélkezelés: igényfelmérés, érthető kommunikáció, utánkövetés, dokumentálás.
+        felelősségvállalás. Koordináció és adminisztratív operáció többéves tapasztalattal, IT-közeli érdeklődéssel
+        (képzések + projektek). Ügyfél- és belső kommunikáció, utánkövetés, dokumentálás.
+      </p>
+
       </p>
 
       <div class="socials">
         <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank" rel="noreferrer"
-          aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank" rel="noreferrer" aria-label="LinkedIn">
           <i class="bx bxl-linkedin"></i>
         </a>
         <!-- @gmail -->
@@ -75,11 +78,30 @@
         </a>
       </div>
 
+      <!-- <div class="cta btn-ghost profile-switch" role="tablist" aria-label="Célzott profil választó">
+        <button class="btn btn-ghost is-active" type="button" data-profile="operations">Operations</button>
+        <button class="btn btn-ghost" type="button" data-profile="supervisor">Supervisor</button>
+        <button class="btn btn-ghost" type="button" data-profile="it">IT Support</button>
+      </div> -->
+      <p>
+      <h2>Válassz Profilt:</h2>
+      </p>
 
-      <div class="cta">
-        <a class="btn btn-ghost" href="doc/Magyar_Gyula_HR-CV.pdf" target="_blank" rel="noreferrer">Önéletrajz (PDF)</a>
-        <a class="btn btn-ghost" href="doc/Magyar_Gyula_Motivacios_level.pdf" target="_blank"
-          rel="noreferrer">Motivációs levél (PDF)</a>
+      <div class="btn-ghost profile-tabs" role="tablist" aria-label="Célzott profilok">
+        <button class="profile-tab is-active" data-profile="operations" type="button">Operáció</button>
+        <button class="profile-tab" data-profile="supervisor" type="button">Csoportvezető</button>
+        <button class="profile-tab" data-profile="it" type="button">IT támogatás</button>
+      </div>
+
+
+      <div class="cta btn-ghost">
+        <a class="btn btn-ghost" id="cvLink" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank" rel="noreferrer">
+          Önéletrajz (PDF)
+        </a>
+        <a class="btn btn-ghost" id="mlLink" href="doc/Magyar_Gyula_ML_Operations.pdf" target="_blank" rel="noreferrer">
+          Motivációs levél (PDF)
+        </a>
+
         <button class="btn btn-ghost" id="phoneModalOpen" type="button">
           Telefonszám kérése
         </button>
@@ -103,22 +125,28 @@
       <h2 class="section-title">Rólam</h2>
 
       <p>
-        Elsősorban irodai/IT jellegű pozíciókban gondolkodom, ahol a koordinációs rutinomat és a célzott informatikai
-        képzéseimet együtt tudom hasznosítani.
-        Üzemeltetési tapasztalatom még nem vállalati környezetből jön, ezért a weboldalon a tanult technológiákat, a
-        rendszerszemléletet és a dokumentált megközelítést hangsúlyozom.
+        Precíz, megbízható és rendszerszemléletű Operations / Office Coordinator vagyok, többéves tapasztalattal
+        adminisztratív és operatív területen. Erősségem a back office folyamatok támogatása, a pontos dokumentáció,
+        valamint több párhuzamos feladat strukturált kezelése.
       </p>
 
       <p>
-        Ügyfélkezelésben jártas vagyok: igények pontosítása, közérthető tájékoztatás, státusz/utánkövetés, valamint
-        dokumentált ügyintézés.
-        Célom, hogy a technikai megoldások mellett a kommunikáció és a folyamatok is átláthatóak legyenek.
+        Munkám során ügyfél- és belső megkeresések kezelésével, feladatpriorizálással, utánkövetéssel és
+        folyamatkövetéssel foglalkoztam. Fontos számomra az átlátható működés: érthető kommunikáció, határidők
+        betartása,
+        és a minőségi adminisztráció.
       </p>
 
       <p>
-        Szabadidőmben hobbiszinten foglalkozom laptop/telefon/ hibakereséssel és alap javításokkal.
-        Angolból jelenleg A2 - B1 szinten vagyok, és célom a magabiztos munkanyelvi kommunikáció – rendszeresen
-        gyakorlok.
+        IT-közeli érdeklődésemet célzott képzésekkel és dokumentált projektekkel fejlesztem (üzemeltetési alapok, AD,
+        virtualizáció, MS SQL). Középtávon csapatkoordinációs (supervisor / team lead) irányba szeretnék fejlődni, ahol
+        a
+        napi működés összehangolásával és a minőségi munkavégzés támogatásával járulhatok hozzá a csapat
+        eredményességéhez.
+        Angol nyelvtudásom A2–B1 szintű, folyamatosan fejlesztem.
+      </p>
+
+      <p>Szabadidőmben hobbiszinten foglalkozom eszközök alap hibakeresésével és kisebb javításaival (laptop/telefon).
       </p>
 
       <ul class="bullets">
@@ -231,10 +259,11 @@
         <h3>Önéletrajz</h3>
         <p>Letölthető egy tömör HR verzió és egy részletesebb, általános álláskeresői verzió.</p>
         <div class="tags">
-          <a class="btn2 btn-ghost" href="doc/Magyar_Gyula_HR-CV.pdf" target="_blank" rel="noopener" download>HR
-            Önéletrajz (PDF)</a>
-          <a class="btn2 btn-ghost" href="doc/Magyar_Gyula_CV.pdf" target="_blank" rel="noopener" download>Önéletrajz
-            (PDF)</a>
+          <a class="btn2 btn-ghost" id="cvLink2" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank"
+            rel="noopener" download>
+            Önéletrajz (PDF)
+          </a>
+
         </div>
       </div>
 
@@ -246,8 +275,10 @@
         </p>
 
         <div class="tags">
-          <a class="btn2 btn-ghost" href="doc/Magyar_Gyula_Motivacios_level.pdf" target="_blank" rel="noopener"
-            download>Motivációs levél (PDF)</a>
+          <a class="btn2 btn-ghost" id="mlLink2" href="doc/Magyar_Gyula_ML_Operations.pdf" target="_blank"
+            rel="noopener" download>
+            Motivációs levél (PDF)
+          </a>
         </div>
       </div>
     </div>
@@ -294,8 +325,7 @@
             Repo
           </a>
 
-          <a class="mini-btn"
-            href="https://github.com/magyargyula/StaffingPro-MSSQL/blob/main/sql/00_all_in_one.sql"
+          <a class="mini-btn" href="https://github.com/magyargyula/StaffingPro-MSSQL/blob/main/sql/00_all_in_one.sql"
             target="_blank" rel="noopener">
             Telepítő script
           </a>
@@ -338,7 +368,7 @@
 
     <div class="contact-box">
       <p><i class="bx bx-envelope"></i> <a href="mailto:mgycontact@gmail.com">mgycontact@gmail.com</a></p>
-      <p><i class="bx bxl-linkedin"></i> <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank" 
+      <p><i class="bx bxl-linkedin"></i> <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank"
           rel="noreferrer">linkedin.com/in/gyulamagyar</a></p>
       <p><i class="bx bxl-github"></i> <a href="https://github.com/magyargyula" target="_blank"
           rel="noreferrer">github.com/magyargyula</a></p>

@@ -41,20 +41,52 @@ window.addEventListener("scroll", () => {
   menuIcon.classList.remove("bx-x");
 });
 
-// Typed.js: contentReference[oaicite:2]{index=2}
-new Typed(".typed", {
-  strings: [
-    "Back Office irodai pozíciók",
-    "IT Junior rendszerüzemeltető",
-    "DB üzemeltető (MS SQL)",
-    "IT support",
-    "Laptop/mobiltelefon szervíz"
+// Typed.js – profilfüggő szövegek
+let typedInstance = null;
+
+const typedMap = {
+  operations: [
+    "Irodai koordinátor",
+    "Back office munkatárs",
+    "Adminisztratív koordinátor",
+    "Operációs munkatárs"
   ],
-  typeSpeed: 55,
-  backSpeed: 35,
-  backDelay: 1200,
-  loop: true
-});
+  supervisor: [
+    "Csapatkoordinátor",
+    "Operációs supervisor",
+    "Junior team lead",
+    "Műszakvezető"
+  ],
+  it: [
+    "Junior IT support",
+    "IT üzemeltetési támogató",
+    "Service Desk munkatárs",
+    "Adatbázis üzemeltető"
+  ]
+};
+
+function startTyped(profileKey = "operations") {
+  const strings = typedMap[profileKey] || typedMap.operations;
+
+  // ha már futott, állítsuk le
+  if (typedInstance) {
+    typedInstance.destroy();
+    typedInstance = null;
+  }
+
+  typedInstance = new Typed(".typed", {
+    strings,
+    typeSpeed: 55,
+    backSpeed: 35,
+    backDelay: 1200,
+    loop: true
+  });
+}
+
+// első indítás a mentett profil alapján
+const savedProfile = localStorage.getItem("mg_profile") || "operations";
+startTyped(savedProfile);
+
 
 // ScrollReveal: contentReference[oaicite:3]{index=3}
 ScrollReveal({
@@ -66,6 +98,50 @@ ScrollReveal({
 
 ScrollReveal().reveal(".home-content, .section-title", { origin: "top", interval: 120 });
 ScrollReveal().reveal(".home-img, .about-box, .card, .project, .contact-box", { origin: "bottom", interval: 120 });
+
+// Profilfüggő typed szöveg és címke
+
+const profileLabels = {
+  operations: "operációs",
+  supervisor: "csoportvezetői",
+  it: "IT"
+};
+
+function startTyped(profileKey){
+  // typed újraindítás
+  if (typedInstance) typedInstance.destroy();
+
+  typedInstance = new Typed(".typed", {
+    strings: typedMap[profileKey],
+    typeSpeed: 55,
+    backSpeed: 35,
+    backDelay: 1200,
+    loop: true
+  });
+}
+
+function setProfile(profileKey){
+  // 1) cím frissítés
+  const label = profileLabels[profileKey] || "";
+  document.getElementById("targetType").textContent = label;
+
+  // 2) gomb kijelölés
+  document.querySelectorAll(".profile-tab").forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.profile === profileKey);
+  });
+
+  // 3) typed frissítés
+  startTyped(profileKey);
+}
+
+// események
+document.querySelectorAll(".profile-tab").forEach(btn => {
+  btn.addEventListener("click", () => setProfile(btn.dataset.profile));
+});
+
+// alapértelmezett profil (pl. operations)
+setProfile("operations");
+
 
 // --- Phone request modal ---
 const phoneModal = document.getElementById("phoneModal");
@@ -104,4 +180,54 @@ document.addEventListener("keydown", (e) => {
     closePhoneModal();
   }
 });
+
+(function () {
+  const map = {
+    operations: {
+      cv: "doc/Magyar_Gyula_CV_Operations.pdf",
+      ml: "doc/Magyar_Gyula_ML_Operations.pdf",
+      roles: ["Operations / Office Coordinator", "Back Office Operations", "Administrative Support"]
+    },
+    supervisor: {
+      cv: "doc/Magyar_Gyula_CV_Supervisor.pdf",
+      ml: "doc/Magyar_Gyula_ML_Supervisor.pdf",
+      roles: ["Team Coordinator", "Operations Supervisor", "Aspiring Team Lead"]
+    },
+    it: {
+      cv: "doc/Magyar_Gyula_CV_ITSupport.pdf",
+      ml: "doc/Magyar_Gyula_ML_ITSupport.pdf",
+      roles: ["IT Operations Support", "Junior IT Support", "System Support (Junior)"]
+    }
+  };
+
+  //  CV and ML profilváltás //
+  const buttons = document.querySelectorAll(".profile-tabs [data-profile]");
+  const cv1 = document.getElementById("cvLink");
+  const ml1 = document.getElementById("mlLink");
+  const cv2 = document.getElementById("cvLink2");
+  const ml2 = document.getElementById("mlLink2");
+
+  function setProfile(key) {
+    const p = map[key] || map.operations;
+
+    if (cv1) cv1.href = p.cv;
+    if (ml1) ml1.href = p.ml;
+    if (cv2) cv2.href = p.cv;
+    if (ml2) ml2.href = p.ml;
+
+    buttons.forEach(b => b.classList.toggle("is-active", b.dataset.profile === key));
+
+    // opcionális: typed szöveg frissítése
+    if (typeof startTyped === "function") startTyped(key);
+
+    // Itt csak elmentjük localStorage-ba, hogy újratöltésnél is megmaradjon
+    localStorage.setItem("mg_profile", key);
+  }
+
+  // init
+  const saved = localStorage.getItem("mg_profile") || "operations";
+  setProfile(saved);
+
+  buttons.forEach(b => b.addEventListener("click", () => setProfile(b.dataset.profile)));
+})();
 
