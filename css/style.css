@@ -193,7 +193,7 @@ section {
 }
 
 .navbar a:hover::after,
-.navbar a.active::after {
+.navbar a:focus-visible::after {
   opacity: .95;
   transform: scaleX(1);
 }
@@ -342,7 +342,7 @@ section {
   left: 1.6rem;
   right: 1.6rem;
   bottom: .55rem;
-  height: 3px;
+  height: 2px;
   background: var(--fire);
   border-radius: 999px;
   opacity: 0;
@@ -352,6 +352,27 @@ section {
 
 .cta .btn.btn-ghost:hover::after,
 .cta .btn.btn-ghost:focus-visible::after {
+  opacity: .95;
+  transform: scaleX(1);
+}
+
+/* HOME CTA underline only on hover/focus-visible */
+.home .cta .btn::after {
+  content: "";
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: .55rem;
+  height: 2px;
+  background: var(--fire);
+  border-radius: 999px;
+  opacity: 0;
+  transform: scaleX(.7);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.home .cta .btn:hover::after,
+.home .cta .btn:focus-visible::after {
   opacity: .95;
   transform: scaleX(1);
 }
@@ -968,6 +989,8 @@ section {
 /* Smaller buttons used inside cards */
 .btn2 {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
   padding: .9rem 1.2rem;
   border-radius: 1.2rem;
   border: 1px solid rgba(var(--ice-rgb), .35);
@@ -978,6 +1001,46 @@ section {
   transition: transform .15s ease, filter .15s ease, border-color .15s ease;
 }
 
+/* same "shine" as .btn */
+.btn2::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(var(--primary-rgb), .25) 35%,
+      rgba(var(--secondary-rgb), .18) 50%,
+      rgba(var(--primary-rgb), .25) 65%,
+      transparent 100%);
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+  pointer-events: none;
+}
+
+.btn2:hover::before {
+  transform: translateX(120%);
+}
+
+/* CV buttons: thin underline only on hover/focus-visible */
+.cv-card .btn2::after {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: .45rem;
+  height: 2px;
+  background: var(--fire);
+  border-radius: 999px;
+  opacity: 0;
+  transform: scaleX(.7);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.cv-card .btn2:hover::after,
+.cv-card .btn2:focus-visible::after {
+  opacity: .95;
+  transform: scaleX(1);
+}
 .btn2:hover {
   transform: translateY(-2px);
   filter: brightness(1.08);
