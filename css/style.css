@@ -1121,11 +1121,14 @@ section {
 }
 /* profil gombok és CTA között több tér */
 .profile-tabs{ margin-bottom: 22px; }  /* növeld 28px-re ha kell */
+
 .cta{ margin-top: 6px; }
 
 /* HOME CTA: compact, no ugly breaks (override at end) */
 .home .cta .btn {
   min-width: clamp(150px, 28vw, 175px);
+  padding: 1.05rem 1.35rem; /* picit kompaktabb home-on */
+  font-size: 1.45rem;
   white-space: nowrap;
 }
 
@@ -1136,3 +1139,4 @@ section {
     font-size: 1.35rem;
   }
 }
+
