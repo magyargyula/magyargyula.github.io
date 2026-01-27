@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body id="top">
   <!-- Header -->
   <header class="header" id="top">
     <a class="logo logo-img" href="#top" aria-label="Kezdőlap">
@@ -59,7 +59,7 @@
 
       <div class="socials">
         <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <i class="bx bxl-linkedin"></i>
         </a>
         <!-- @gmail -->
@@ -67,11 +67,11 @@
           <i class="bx bx-envelope"></i>
         </a>
         <!-- GitHub -->
-        <a href="https://github.com/magyargyula" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <a href="https://github.com/magyargyula" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <i class="bx bxl-github"></i>
         </a>
         <!-- Facebook -->
-        <a href="https://www.facebook.com/gyula.magyar.777/" target="_blank" rel="noreferrer" aria-label="Facebook">
+        <a href="https://www.facebook.com/gyula.magyar.777/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <i class="bx bxl-facebook"></i>
         </a>
       </div>
@@ -79,19 +79,19 @@
         A kiválasztott <strong id="activeProfileLabel">Operáció</strong> nézethez tartozó dokumentumok érhetők el.
       </p>
 
-
       <div class="btn-ghost profile-tabs" role="tablist" aria-label="Célzott profilok">
-        <button class="profile-tab is-active" data-profile="operations" type="button">Operáció</button>
-        <button class="profile-tab" data-profile="supervisor" type="button">Csoportvezető</button>
-        <button class="profile-tab" data-profile="it" type="button">IT támogatás</button>
-      </div>
+      <button class="profile-tab is-active" role="tab" aria-selected="true" tabindex="0" data-profile="operations" type="button">Operáció</button>
+      <button class="profile-tab" role="tab" aria-selected="false" tabindex="-1" data-profile="supervisor" type="button">Csoportvezető</button>
+      <button class="profile-tab" role="tab" aria-selected="false" tabindex="-1" data-profile="it" type="button">IT támogatás</button>
+      <button class="profile-tab" role="tab" aria-selected="false" tabindex="-1" data-profile="db" type="button">DB üzemeltetés</button>
+    </div>
 
 
       <div class="cta btn-ghost">
-        <a class="btn btn-ghost" id="cvLink" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank" rel="noreferrer">
+        <a class="btn btn-ghost" id="cvLink" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank" rel="noopener noreferrer">
           Önéletrajz (PDF)
         </a>
-        <a class="btn btn-ghost" id="mlLink" href="doc/Magyar_Gyula_ML_Operations.pdf" target="_blank" rel="noreferrer">
+        <a class="btn btn-ghost" id="mlLink" href="doc/Magyar_Gyula_ML_Operations.pdf" target="_blank" rel="noopener noreferrer">
           Motivációs levél (PDF)
         </a>
 
@@ -263,7 +263,7 @@
         </div>
       </div>
 
-      <div class="project cv-card" style="cursor:default;">
+      <div class="project cv-card cv-static">
         <h3>Motivációs levél</h3>
         <p id="mlDesc" style="margin-top:.4rem;">
           A kiválasztott <strong><span class="activeProfileLabelClone">Operáció</span></strong> profilhoz tartozó motivációs levél tölthető le.
@@ -364,15 +364,15 @@
     <div class="contact-box">
       <p><i class="bx bx-envelope"></i> <a href="mailto:mgycontact@gmail.com">mgycontact@gmail.com</a></p>
       <p><i class="bx bxl-linkedin"></i> <a href="https://www.linkedin.com/in/gyulamagyar" target="_blank"
-          rel="noreferrer">linkedin.com/in/gyulamagyar</a></p>
+          rel="noopener noreferrer">linkedin.com/in/gyulamagyar</a></p>
       <p><i class="bx bxl-github"></i> <a href="https://github.com/magyargyula" target="_blank"
-          rel="noreferrer">github.com/magyargyula</a></p>
+          rel="noopener noreferrer">github.com/magyargyula</a></p>
     </div>
   </section>
 
   <footer class="footer">
     <p>© <span id="year"></span> Magyar Gyula • Portfólió</p>
-    <a class="to-top" href="#top" aria-label="Ugrás a tetejére"><i class="bx bx-up-arrow-alt"></i></a>
+    <a class="to-top" href="#top" aria-label="Ugrás a lap tetejére"><i class="bx bx-up-arrow-alt"></i></a>
   </footer>
 
   <!-- Phone request modal -->

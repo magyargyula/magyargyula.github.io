@@ -52,17 +52,21 @@ const typedMap = {
     "Operációs munkatárs"
   ],
   supervisor: [
-  "Csapatkoordinátor",
-  "Operációs supervisor",
-  "Junior team lead",
-  "Csoportvezető-helyettes"
-],
+    "Csapatkoordinátor",
+    "Operációs csoportvezető",
+    "Junior team lead",
+    "Csoportvezető-helyettes"
+  ],
   it: [
     "Junior IT support",
     "IT üzemeltetési támogató",
     "Service Desk munkatárs"
-    // "Adatbázis üzemeltető" 
-  ]
+  ],
+  db: [
+    "Junior adatbázis-adminisztrátor",
+    "SQL támogatás",
+    "Adatbázis üzemeltetési támogató"
+  ],
 };
 
 const profileConfig = {
@@ -83,6 +87,12 @@ const profileConfig = {
     targetType: "IT-támogatási",
     cv: "doc/Magyar_Gyula_CV_ITSupport.pdf",
     ml: "doc/Magyar_Gyula_ML_ITSupport.pdf"
+  },
+  db: {
+    btnLabel: "DB üzemeltetés",
+    targetType: "adatbázis-üzemeltetési",
+    cv: "doc/Magyar_Gyula_CV_DB.pdf",
+    ml: "doc/Magyar_Gyula_ML_DB.pdf"
   }
 };
 
@@ -141,6 +151,12 @@ function setProfile(profileKey) {
     el.textContent = cfg.btnLabel;
   });
 
+  document.querySelectorAll(".profile-tab").forEach(btn => {
+    const active = btn.dataset.profile === profileKey;
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-selected", active ? "true" : "false");
+    btn.setAttribute("tabindex", active ? "0" : "-1");
+  });
 }
 
 // init + események
