@@ -40,6 +40,7 @@ window.addEventListener("scroll", () => {
   navbar.classList.remove("active");
   menuIcon.classList.remove("bx-x");
 });
+ 
 
 // Typed.js – profilfüggő szövegek
 let typedInstance = null;
@@ -109,7 +110,8 @@ function startTyped(profileKey = "operations") {
     typeSpeed: 55,
     backSpeed: 35,
     backDelay: 1200,
-    loop: true
+    loop: true,
+    showCursor: false
   });
 }
 

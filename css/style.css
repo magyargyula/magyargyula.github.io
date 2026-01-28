@@ -159,14 +159,37 @@ section {
 }
 
 .navbar a {
+  display: inline-flex;
+  align-items: center;
   border: 1px solid transparent;
   font-size: 1.5rem;
   margin-left: 2.3rem;
   color: var(--muted);
   position: relative;
+  overflow: hidden;
   padding: .45rem .8rem;
   border-radius: 1.2rem;
   transition: color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.navbar a::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(var(--ice-rgb), .20) 35%,
+    rgba(var(--fire-rgb), .14) 50%,
+    rgba(var(--ice-rgb), .20) 65%,
+    transparent 100%);
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+  pointer-events: none;
+}
+
+.navbar a:hover::before,
+.navbar a:focus-visible::before{
+  transform: translateX(120%);
 }
 
 .navbar a:hover,
@@ -204,11 +227,30 @@ section {
   align-items: center;
   gap: 5rem;
 }
-/* HOME CTA: picit kompaktabb, hogy jobban elférjen */
+
+/* HOME CTA: 3 gomb rácsban, középre */
+.home .cta{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(190px, 1fr));
+  gap: 14px;
+  justify-content: center;
+  width: 100%;
+  max-width: 920px;     /* 860 helyett */
+  margin: 6px auto 0;
+  justify-items: stretch; /* a gombok szépen töltsék a cellát */
+}
+
 .home .cta .btn{
-  min-width: 175px; /* ha kell 165px-re csökkentsd */
-  padding: 1.05rem 1.35rem;
-  font-size: 1.45rem;
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  white-space: nowrap;
+}
+
+
+.home .cta button.btn{ 
+  font-family: inherit; 
+  appearance: none; 
 }
 
 
@@ -243,19 +285,22 @@ section {
   text-shadow: 0 0 16px rgba(var(--primary-rgb), .18);
 }
 
-
 /* Typed – outline (stroke) stílus */
 .typed {
-  font-size: 3.8rem;
-  /* méret (növeld/csökkentsd) */
+  display: block;
+  width: 34ch;
+  line-height: 1.1;     /* FIXÁLJA a sor magasságát */
+  height: 1.2em;              /* fix helyet foglal – állítsd igény szerint */
+  max-width: 100%;
+  min-height: 1.25em;   /* ne essen össze törléskor */
+  overflow: hidden;     /* ne tudjon kilógni */
+  vertical-align: bottom;
+  white-space: nowrap;  /* 1 sorban marad, de nem tolja a layoutot */
+  font-size: 3.8rem;   /* méret (növeld/csökkentsd) */
   font-weight: 800;
   letter-spacing: .5px;
-
-  color: transparent;
-  /* ne legyen kitöltés (--fire) volt*/
-  -webkit-text-stroke: 1px var(--ice);
-  /* körvonal színe + vastagság */
-
+  color: transparent;   /* ne legyen kitöltés (--fire) volt*/
+  -webkit-text-stroke: 1px var(--ice);   /* körvonal színe + vastagság */
   /* extra “glow” ha szeretnéd */
   text-shadow: 0 0 18px rgba(var(--ice-rgb), .22);
 }
@@ -303,40 +348,16 @@ section {
   transform: translateY(-1px);
 }
 
-
-/* Hero CTA gombok */
-.cta {
-  display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* CTA ghost – navbar jelleg (áttetsző, kapszula, finom hover) */
-.cta .btn.btn-ghost {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, .18);
-  color: var(--text);
-  box-shadow: none;
-}
-
-/* hover/active érzés mint a navbar */
-.cta .btn.btn-ghost:hover,
-.cta .btn.btn-ghost:focus-visible {
-  background: rgba(var(--accent-rgb), .14);
-  /* mint navbar*/
-  border-color: rgba(var(--accent-rgb), .30);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(var(--accent-rgb), .14);
-  outline: none;
-}
-
-/* opcionális: “aláhúzás” effekt (navbar ::after feeling) */
-.cta .btn.btn-ghost {
+.btn.btn-ghost {
   position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .02) !important;
+  border: 1px solid rgba(255, 255, 255, .18);
+  box-shadow: none;
+  min-width: 190px;
 }
 
-.cta .btn.btn-ghost::after {
+.btn.btn-ghost::after{
   content: "";
   position: absolute;
   left: 1.6rem;
@@ -348,43 +369,19 @@ section {
   opacity: 0;
   transform: scaleX(.7);
   transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
 }
 
-.cta .btn.btn-ghost:hover::after,
-.cta .btn.btn-ghost:focus-visible::after {
+.btn.btn-ghost:hover::after,
+.btn.btn-ghost:focus-visible::after{
   opacity: .95;
   transform: scaleX(1);
 }
 
-/* HOME CTA underline only on hover/focus-visible */
-.home .cta .btn::after {
-  content: "";
-  position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: .55rem;
-  height: 2px;
-  background: var(--fire);
-  border-radius: 999px;
-  opacity: 0;
-  transform: scaleX(.7);
-  transition: opacity .2s ease, transform .2s ease;
-}
-
-.home .cta .btn:hover::after,
-.home .cta .btn:focus-visible::after {
-  opacity: .95;
-  transform: scaleX(1);
-}
-
-.cta-groups {
-  display: flex;
-  flex-direction: column;
-}
-
-.cta-main {
-  margin-top: 34px;
-  /* növeld 34px-re ha még kell */
+.btn.btn-ghost:hover {
+  background: rgba(var(--primary-rgb), .10) !important;
+  border-color: rgba(var(--primary-rgb), .55);
+  box-shadow: 0 14px 34px rgba(var(--primary-rgb), .12);
 }
 
 .btn {
@@ -438,19 +435,7 @@ section {
     0 0 26px rgba(var(--primary-rgb), .12);
 }
 
-.btn.btn-ghost {
-  background: rgba(255, 255, 255, .02) !important;
-  border: 1px solid rgba(255, 255, 255, .18);
-  box-shadow: none;
-  min-width: 190px;
-  /* azonos hossz */
-}
 
-.btn.btn-ghost:hover {
-  background: rgba(var(--primary-rgb), .10) !important;
-  border-color: rgba(var(--primary-rgb), .55);
-  box-shadow: 0 14px 34px rgba(var(--primary-rgb), .12);
-}
 
 .profile-tabs {
   display: grid;
@@ -458,28 +443,14 @@ section {
   gap: 14px;
   width: 100%;
   max-width: 920px;
-  /* ízlés szerint */
-  margin: 14px 0 18px;
+  margin: 14px auto 18px;
+  justify-items: stretch;
   /* felül alul távolság */
 }
 
-/* tablet: 2x2 */
-@media (max-width: 980px) {
-  .profile-tabs {
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
-    max-width: 760px;
-  }
-}
-
-/* mobilon szépen törjön */
-@media (max-width: 640px) {
-  .profile-tabs {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-  }
-}
-
+/* PROFIL gombok: navbar-szerű shine + hover underline, de a border marad */
 .profile-tab {
+  position: relative;
   width: 100%;
   height: 46px;
   display: inline-flex;
@@ -492,27 +463,76 @@ section {
   border: 1px solid rgba(0, 255, 170, .35);
   background: rgba(0, 0, 0, .25);
   color: #eafbf6;
+  overflow: hidden; /* kell a csillogáshoz */
   font-weight: 600;
   letter-spacing: .2px;
   cursor: pointer;
   transition: transform .08s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.profile-tab:hover {
-  transform: translateY(-1px);
+
+/* Shine csík (mint navbar) */
+.profile-tab::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(var(--ice-rgb), .20) 35%,
+    rgba(var(--fire-rgb), .14) 50%,
+    rgba(var(--ice-rgb), .20) 65%,
+    transparent 100%);
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+  pointer-events: none;
 }
-/* aktív állapot – olyan “pill” mint a nav aktív */
-.profile-tab.is-active {
+
+.profile-tab:hover::before,
+.profile-tab:focus-visible::before{
+  transform: translateX(120%);
+}
+
+/* Vékony aláhúzás csak hover/focus esetén */
+.profile-tab::after{
+  content: "";
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: .55rem;
+  height: 2px;
+  background: var(--fire);
+  border-radius: 999px;
+  opacity: 0;
+  transform: scaleX(.7);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.profile-tab:hover::after,
+.profile-tab:focus-visible::after{
+  opacity: .95;
+  transform: scaleX(1);
+}
+
+.profile-tab.is-active{
   border-color: rgba(0, 255, 170, .9);
   box-shadow: 0 0 0 3px rgba(0, 255, 170, .18);
   background: rgba(0, 255, 170, .10);
 }
+.profile-tab.is-active::after{
+  opacity: 0;
+  transform: scaleX(.7);
+}
+
+
+.profile-tab:hover {
+  transform: translateY(-1px);
+}
 
 .home-img {
-  margin-left: auto;
-  /* kitolja jobbra */
+  margin-left: auto;          /* kitolja jobbra */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;    /* a hero-photo marad középen a saját dobozában */
 }
 
 .hero-photo {
@@ -528,7 +548,6 @@ section {
 /* Circular photo (no frame) */
 .hero-photo__img {
   width: 34rem;
-  /*28*/
   height: 34rem;
   border-radius: 50%;
   object-fit: cover;
@@ -986,6 +1005,8 @@ section {
   margin-top: 1.2rem;
 }
 
+
+
 /* Responsive */
 @media (max-width: 1100px) {
   .cards {
@@ -1001,13 +1022,23 @@ section {
   }
 }
 
+/* tablet: 2x2 */
+@media (max-width: 980px) {
+  .profile-tabs {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    max-width: 760px;
+  }
+
+  .home .cta{ grid-template-columns: repeat(2, minmax(190px, 1fr)); }
+}
+
 /* Mobil layout:  */
 @media (max-width: 860px) {
   .home {
     flex-direction: column;
     gap: 2.2rem;
     padding-top: 11rem;
-    /* ha fix header van */
+
   }
 
   .home-content {
@@ -1020,6 +1051,7 @@ section {
     width: 100%;
     display: grid;
     place-items: center;
+    margin-left: 0;           /* mobilon ne tolja jobbra */
   }
 
   /* a kör/kép ne legyen túl nagy mobilon */
@@ -1042,6 +1074,16 @@ section {
     -webkit-text-stroke: 1.5px var(--ice);
     text-stroke: 1.5px var(--ice);
   }
+}
+
+/* mobilon szépen törjön */
+@media (max-width: 640px) {
+  .profile-tabs {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .home .cta{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -1069,24 +1111,3 @@ section {
     grid-template-columns: 1fr;
   }
 }
-/* profil gombok és CTA között több tér */
-.profile-tabs{ margin-bottom: 22px; }  /* növeld 28px-re ha kell */
-
-.cta{ margin-top: 6px; }
-
-/* HOME CTA: compact, no ugly breaks (override at end) */
-.home .cta .btn {
-  min-width: clamp(150px, 28vw, 175px);
-  padding: 1.05rem 1.35rem; /* picit kompaktabb home-on */
-  font-size: 1.45rem;
-  white-space: nowrap;
-}
-
-@media (max-width: 560px) {
-  .home .cta .btn {
-    min-width: 150px;
-    padding: .95rem 1.2rem;
-    font-size: 1.35rem;
-  }
-}
-
