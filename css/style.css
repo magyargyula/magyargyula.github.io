@@ -1,56 +1,126 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+/*
+╔═══════════════════════════════════════════════════════════════╗
+║  Magyar Gyula Portfolio - Design System                      ║
+║  Clean, organized CSS variables for consistent theming       ║
+╚═══════════════════════════════════════════════════════════════╝
+
+  🎨 Color Palette - Tech/Operations Focus:
+     - Platinum:    Metallic silver (#e0e7ff) - Power & Reliability
+     - Cyber Blue:  Tech blue (#60a5fa) - IT & Innovation
+     - Success:     Operations green (#10b981) - Efficiency
+
+  🔧 Tech Theme:
+     - Metallic accents for professional strength
+     - Blue for IT/tech emphasis
+     - Grid patterns for systematic approach
+     - Futuristic security lock animations
+
+  📐 Usage:
+     - Use --platinum/--cyber-blue for main accents
+     - Use --steel for muted elements
+     - Use -rgb variants with rgba() for transparency
+*/
 
 :root {
-  /* =========
-     Theme
-     ========= */
-  --bg: #070b18;
-  --bg2: #0b1430;
+  /* ===================
+     Base Colors - Deeper Tech Background
+     =================== */
 
-  --text: #eaf0ff;
-  --muted: #a9b6d6;
+  /* Background & Text */
+  --bg: #0a0e1a;              /* Deeper blue-black for tech feel */
+  --bg-grid: #111827;         /* Grid pattern background */
+  --text: #e0e7ff;            /* Platinum-tinted white */
+  --muted: #94a3b8;           /* Steel gray */
 
-  --border: rgba(255, 255, 255, .10);
-  --shadow: 0 16px 40px rgba(0, 0, 0, .45);
+  /* Surfaces & Overlays */
+  --surface: rgba(224, 231, 255, .03);   /* Platinum tint */
+  --surface2: rgba(224, 231, 255, .05);
+  --border: rgba(224, 231, 255, .12);
+  --shadow: 0 16px 40px rgba(0, 0, 0, .5);
 
-  /* Surfaces */
-  --surface: rgba(255, 255, 255, .03);
-  --surface2: rgba(255, 255, 255, .035);
+  /* ===================
+     Metallic & Tech Colors
+     =================== */
 
-  /* Accent colors (RGB so rgba() works everywhere) */
-  --ice-rgb: 43, 255, 136;
-  /* szürke */
-  --fire-rgb: 22, 200, 107;
-  /* kék */
-  --orange-rgb: 255, 122, 24;
-  /* narancs */
-  --grass-rgb: 72, 255, 162;
-  /* zöld 48ffa2*/
-  --ice: rgb(var(--ice-rgb));
-  --fire: rgb(var(--fire-rgb));
-  --grass: rgb(var(--grass-rgb));
-  --orange: rgb(var(--orange-rgb));
-  --primary-rgb: var(--ice-rgb);
-  --secondary-rgb: var(--fire-rgb);
+  /* Platinum - Power & Reliability */
+  --platinum-rgb: 224, 231, 255;
+  --platinum: rgb(var(--platinum-rgb));
+  --steel: #94a3b8;
+  --chrome: #cbd5e1;
 
+  /* Cyber Blue - IT & Innovation */
+  --cyber-blue-rgb: 96, 165, 250;
+  --cyber-blue: rgb(var(--cyber-blue-rgb));
+  --electric-rgb: 59, 130, 246;
+  --electric: rgb(var(--electric-rgb));
+  --neon-cyan: #06b6d4;
 
-  /* Primary accent across UI */
-  --main: var(--ice);
-  --typed: var(--fire);
+  /* Operations Green - Success & Efficiency */
+  --success-rgb: 16, 185, 129;
+  --success: rgb(var(--success-rgb));
 
-  /* Used for the warm background glow */
-  --accent-rgb: var(--fire-rgb);
+  /* ===================
+     Primary System (Backwards Compatible)
+     =================== */
 
-  /* Component tokens */
+  /* Primary: Cyber Blue for IT emphasis */
+  --primary-rgb: var(--cyber-blue-rgb);
+  --primary: var(--cyber-blue);
+
+  /* Secondary: Success green for operations */
+  --secondary-rgb: var(--success-rgb);
+  --secondary: var(--success);
+
+  /* Aliases for semantic usage */
+  --ice-rgb: var(--platinum-rgb);        /* Cool metallic accents */
+  --fire-rgb: var(--cyber-blue-rgb);     /* Warm tech accents */
+  --ice: var(--platinum);
+  --fire: var(--cyber-blue);
+  --main: var(--cyber-blue);             /* Main UI accent */
+  --accent-rgb: var(--electric-rgb);     /* Background glow accent */
+
+  /* ===================
+     Component Tokens
+     =================== */
+
+  /* Header */
   --header-bg: transparent;
-  --header-bg-sticky: rgba(15, 23, 42, .70);
+  --header-bg-sticky: rgba(10, 14, 26, .85);
 
-  --btn-grad-a: rgba(var(--ice-rgb), .16);
-  --btn-grad-b: rgba(var(--fire-rgb), .10);
-  --ghost-hover: rgba(var(--ice-rgb), .08);
+  /* Tech Effects */
+  --glow-blue: 0 0 20px rgba(var(--cyber-blue-rgb), .3);
+  --glow-platinum: 0 0 16px rgba(var(--platinum-rgb), .2);
 
-  --social-icon: var(--main);
-  --ring-color: var(--ice);
+  /* Gradients */
+  --gradient-tech: linear-gradient(135deg,
+    rgba(var(--cyber-blue-rgb), .1),
+    rgba(var(--electric-rgb), .05));
+  --gradient-metallic: linear-gradient(135deg,
+    rgba(var(--platinum-rgb), .08),
+    rgba(203, 213, 225, .04));
+
+  /* ===================
+     Layout & Spacing
+     =================== */
+
+  /* Typography */
+  --font-main: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  /* Border Radius */
+  --radius-sm: 1.2rem;   /* Small elements (nav links, buttons) */
+  --radius-md: 2rem;     /* Cards, modals */
+  --radius-lg: 999px;    /* Pill-shaped buttons */
+  --radius-circle: 50%;  /* Circular elements */
+
+  /* Transitions */
+  --transition-fast: .15s ease;    /* Quick interactions */
+  --transition-base: .2s ease;     /* Standard interactions */
+  --transition-slow: .3s ease;     /* Larger movements */
+  --transition-shine: .55s ease;   /* Shine/glow effects */
 }
 
 /* Reset */
@@ -66,14 +136,44 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-main);
   background:
-    radial-gradient(900px 650px at 18% 18%, rgba(var(--accent-rgb), .18), transparent 55%),
-    radial-gradient(900px 650px at 85% 20%, rgba(var(--ice-rgb), .16), transparent 55%),
-    radial-gradient(1200px 900px at 55% 110%, rgba(var(--ice-rgb), .10), transparent 60%),
+    radial-gradient(900px 650px at 18% 18%, rgba(var(--cyber-blue-rgb), .12), transparent 55%),
+    radial-gradient(900px 650px at 85% 20%, rgba(var(--platinum-rgb), .08), transparent 55%),
+    radial-gradient(1200px 900px at 55% 110%, rgba(var(--electric-rgb), .06), transparent 60%),
     var(--bg);
   color: var(--text);
-  overflow-x: hidden; /* elkerüli a vízszintes görgetősávot */
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Tech Grid Pattern Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(var(--cyber-blue-rgb), .03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--cyber-blue-rgb), .03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Subtle scanline effect */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(var(--platinum-rgb), .01) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
 }
 
 a {
@@ -83,6 +183,8 @@ a {
 
 section {
   padding: 9rem 9% 6rem;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -360,9 +462,11 @@ section {
 .btn.btn-ghost {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, .02) !important;
-  border: 1px solid rgba(255, 255, 255, .18);
-  box-shadow: none;
+  background: var(--gradient-metallic) !important;
+  border: 1px solid rgba(var(--platinum-rgb), .2);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, .3),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
   min-width: 190px;
 }
 
@@ -373,7 +477,7 @@ section {
   right: 1.6rem;
   bottom: .55rem;
   height: 2px;
-  background: var(--fire);
+  background: var(--cyber-blue);
   border-radius: 999px;
   opacity: 0;
   transform: scaleX(.7);
@@ -385,47 +489,53 @@ section {
 .btn.btn-ghost:focus-visible::after{
   opacity: .95;
   transform: scaleX(1);
+  box-shadow: var(--glow-blue);
 }
 
 .btn.btn-ghost:hover {
-  background: rgba(var(--primary-rgb), .10) !important;
-  border-color: rgba(var(--primary-rgb), .55);
-  box-shadow: 0 14px 34px rgba(var(--primary-rgb), .12);
+  background: var(--gradient-tech) !important;
+  border-color: rgba(var(--cyber-blue-rgb), .5);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, .3),
+    inset 0 1px 0 rgba(255, 255, 255, .1),
+    var(--glow-blue);
 }
 
 .btn {
   display: inline-flex;
   position: relative;
   overflow: hidden;
-  /* kell a fénycsíkhoz */
   align-items: center;
   justify-content: center;
   padding: 1.15rem 1.6rem;
   border-radius: 999px;
-  border: 1px solid rgba(var(--primary-rgb), .55);
-  background: linear-gradient(135deg, rgba(var(--primary-rgb), .26), rgba(var(--secondary-rgb), .10));
+  border: 1px solid rgba(var(--cyber-blue-rgb), .4);
+  background: linear-gradient(135deg,
+    rgba(var(--cyber-blue-rgb), .2),
+    rgba(var(--electric-rgb), .1));
   color: var(--text);
   font-size: 1.5rem;
   font-weight: 700;
   min-width: 190px;
-  /* azonos hossz */
-  box-shadow: 0 10px 26px rgba(0, 0, 0, .22);
-  transition: transform .15s ease, filter .15s ease, border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, .22),
+    inset 0 1px 0 rgba(255, 255, 255, .1);
+  transition: transform var(--transition-fast), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
-/* finom fénycsík animáció hoverre */
+/* Tech shine animation */
 .btn::before {
   content: "";
   position: absolute;
   inset: -2px;
   background: linear-gradient(120deg,
       transparent 0%,
-      rgba(var(--primary-rgb), .25) 35%,
-      rgba(var(--secondary-rgb), .18) 50%,
-      rgba(var(--primary-rgb), .25) 65%,
+      rgba(var(--platinum-rgb), .15) 35%,
+      rgba(var(--cyber-blue-rgb), .2) 50%,
+      rgba(var(--platinum-rgb), .15) 65%,
       transparent 100%);
   transform: translateX(-120%);
-  transition: transform .55s ease;
+  transition: transform var(--transition-shine);
   pointer-events: none;
 }
 
@@ -433,15 +543,14 @@ section {
   transform: translateX(120%);
 }
 
-/* plusz “glow” érzés hoverre */
+/* Metallic glow hover */
 .btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.06);
-  border-color: rgba(var(--secondary-rgb), .45);
+  border-color: rgba(var(--cyber-blue-rgb), .7);
   box-shadow:
     0 14px 34px rgba(0, 0, 0, .30),
-    0 0 0 1px rgba(var(--primary-rgb), .18),
-    0 0 26px rgba(var(--primary-rgb), .12);
+    inset 0 1px 0 rgba(255, 255, 255, .15),
+    var(--glow-blue);
 }
 
 
@@ -457,7 +566,7 @@ section {
   /* felül alul távolság */
 }
 
-/* PROFIL gombok: navbar-szerű shine + hover underline, de a border marad */
+/* PROFIL gombok: Tech metallic style */
 .profile-tab {
   position: relative;
   width: 100%;
@@ -467,31 +576,34 @@ section {
   justify-content: center;
   text-align: center;
   padding: 0 16px;
-  white-space: nowrap; /* ne tördelje a DB üzemeltetés-t */
+  white-space: nowrap;
   border-radius: 999px;
-  border: 1px solid rgba(0, 255, 170, .35);
-  background: rgba(0, 0, 0, .25);
-  color: #eafbf6;
-  overflow: hidden; /* kell a csillogáshoz */
+  border: 1px solid rgba(var(--platinum-rgb), .25);
+  background: var(--gradient-metallic);
+  color: var(--text);
+  overflow: hidden;
   font-weight: 600;
   letter-spacing: .2px;
   cursor: pointer;
-  transition: transform .08s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, .2),
+    inset 0 1px 0 rgba(255, 255, 255, .06);
+  transition: transform var(--transition-fast), background var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-/* Shine csík (mint navbar) */
+/* Tech shine animation */
 .profile-tab::before{
   content: "";
   position: absolute;
   inset: -2px;
   background: linear-gradient(120deg,
     transparent 0%,
-    rgba(var(--ice-rgb), .20) 35%,
-    rgba(var(--fire-rgb), .14) 50%,
-    rgba(var(--ice-rgb), .20) 65%,
+    rgba(var(--platinum-rgb), .15) 35%,
+    rgba(var(--cyber-blue-rgb), .2) 50%,
+    rgba(var(--platinum-rgb), .15) 65%,
     transparent 100%);
   transform: translateX(-120%);
-  transition: transform .55s ease;
+  transition: transform var(--transition-shine);
   pointer-events: none;
 }
 
@@ -500,7 +612,7 @@ section {
   transform: translateX(120%);
 }
 
-/* Vékony aláhúzás csak hover/focus esetén */
+/* Tech underline */
 .profile-tab::after{
   content: "";
   position: absolute;
@@ -508,11 +620,12 @@ section {
   right: 1.6rem;
   bottom: .55rem;
   height: 2px;
-  background: var(--fire);
+  background: var(--cyber-blue);
   border-radius: 999px;
   opacity: 0;
   transform: scaleX(.7);
-  transition: opacity .2s ease, transform .2s ease;
+  box-shadow: 0 0 8px rgba(var(--cyber-blue-rgb), .5);
+  transition: opacity var(--transition-base), transform var(--transition-base);
   pointer-events: none;
 }
 
@@ -523,18 +636,22 @@ section {
 }
 
 .profile-tab.is-active{
-  border-color: rgba(0, 255, 170, .9);
-  box-shadow: 0 0 0 3px rgba(0, 255, 170, .18);
-  background: rgba(0, 255, 170, .10);
+  border-color: rgba(var(--cyber-blue-rgb), .7);
+  box-shadow:
+    0 0 0 3px rgba(var(--cyber-blue-rgb), .15),
+    var(--glow-blue),
+    inset 0 1px 0 rgba(255, 255, 255, .1);
+  background: var(--gradient-tech);
 }
+
 .profile-tab.is-active::after{
   opacity: 0;
   transform: scaleX(.7);
 }
 
-
 .profile-tab:hover {
   transform: translateY(-1px);
+  border-color: rgba(var(--cyber-blue-rgb), .4);
 }
 
 .home-img {
@@ -554,14 +671,17 @@ section {
   place-items: center;
 }
 
-/* Circular photo (no frame) */
+/* Circular photo with tech glow */
 .hero-photo__img {
   width: 34rem;
   height: 34rem;
   border-radius: 50%;
   object-fit: cover;
-  border: none;
-  box-shadow: 0 18px 55px rgba(0, 0, 0, .55);
+  border: 2px solid rgba(var(--platinum-rgb), .15);
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, .55),
+    0 0 30px rgba(var(--cyber-blue-rgb), .15),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
   display: block;
   position: relative;
   z-index: 2;
@@ -574,57 +694,87 @@ section {
   z-index: 2;
 }
 
-/* Orbit / ring animation */
-.hero-photo::before,
-.hero-photo::after {
+/* ===== TECH SECURITY LOCK RINGS ===== */
+
+/* Outer Tech Ring - Segmented like security lock */
+.hero-photo::before {
   content: "";
   position: absolute;
-  inset: .9rem;
-  /* ring size */
+  inset: .5rem;
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
 
-  /* draw only a thin ring using mask */
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
+  /* Tech segmented ring with gaps (like security lock panels) */
+  background: conic-gradient(from 0deg,
+      rgba(var(--platinum-rgb), .9) 0 8%,
+      transparent 8% 12%,
+      rgba(var(--cyber-blue-rgb), 1) 12% 20%,
+      transparent 20% 24%,
+      rgba(var(--platinum-rgb), .9) 24% 32%,
+      transparent 32% 36%,
+      rgba(var(--electric-rgb), .8) 36% 44%,
+      transparent 44% 48%,
+      rgba(var(--platinum-rgb), .9) 48% 56%,
+      transparent 56% 60%,
+      rgba(var(--cyber-blue-rgb), 1) 60% 68%,
+      transparent 68% 72%,
+      rgba(var(--platinum-rgb), .9) 72% 80%,
+      transparent 80% 84%,
+      rgba(var(--electric-rgb), .8) 84% 92%,
+      transparent 92% 100%);
+
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
+
+  filter: drop-shadow(0 0 12px rgba(var(--cyber-blue-rgb), .4));
+  opacity: 1;
+  animation: techLockSpin 8s linear infinite;
 }
 
-/* long, thin ice arcs */
-.hero-photo::before {
-  background: conic-gradient(from 200deg,
-      transparent 0 10%,
-      rgba(var(--ice-rgb), 1) 10% 38%,
-      transparent 38% 62%,
-      rgba(var(--ice-rgb), 1) 62% 82%,
-      transparent 82% 100%);
-  filter: drop-shadow(0 0 18px rgba(var(--ice-rgb), .22));
-  opacity: .95;
-  animation: ringSpin 7.5s linear infinite;
-}
-
-/* secondary (fire) arc layer, slightly offset + thinner */
+/* Inner Tech Ring - Counter-rotating with different segments */
 .hero-photo::after {
-  inset: 2.4rem;
+  content: "";
+  position: absolute;
+  inset: 2rem;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+
+  /* Different segmentation pattern for depth */
+  background: conic-gradient(from 45deg,
+      transparent 0 15%,
+      rgba(var(--platinum-rgb), .7) 15% 25%,
+      transparent 25% 40%,
+      rgba(var(--cyber-blue-rgb), .9) 40% 48%,
+      transparent 48% 52%,
+      rgba(var(--electric-rgb), .6) 52% 60%,
+      transparent 60% 75%,
+      rgba(var(--platinum-rgb), .7) 75% 85%,
+      transparent 85% 100%);
+
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  background: conic-gradient(from 20deg,
-      transparent 0 55%,
-      rgba(var(--fire-rgb), 1) 55% 74%,
-      transparent 74% 100%);
-  filter: drop-shadow(0 0 14px rgba(var(--fire-rgb), .18));
-  opacity: .70;
-  animation: ringSpinReverse 10s linear infinite;
+
+  filter: drop-shadow(0 0 10px rgba(var(--platinum-rgb), .3));
+  opacity: .85;
+  animation: techLockSpinReverse 10s linear infinite;
 }
 
-@keyframes ringSpin {
-  to {
+@keyframes techLockSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes ringSpinReverse {
-  to {
+@keyframes techLockSpinReverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
     transform: rotate(-360deg);
   }
 }
@@ -683,17 +833,25 @@ section {
 }
 
 .card {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 2rem;
+  position: relative;
+  border: 1px solid transparent;
+  background:
+    var(--surface) padding-box,
+    linear-gradient(135deg,
+      rgba(var(--platinum-rgb), .15),
+      rgba(var(--cyber-blue-rgb), .08)
+    ) border-box;
+  border-radius: var(--radius-md);
   padding: 2rem;
   box-shadow: var(--shadow);
-  transition: transform .15s ease, border-color .15s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-base);
 }
 
 .card:hover {
   transform: translateY(-3px);
-  border-color: rgba(var(--ice-rgb), .25);
+  box-shadow:
+    var(--shadow),
+    var(--glow-blue);
 }
 
 .card i {
@@ -721,17 +879,25 @@ section {
 }
 
 .project {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 2rem;
+  position: relative;
+  border: 1px solid transparent;
+  background:
+    var(--surface) padding-box,
+    linear-gradient(135deg,
+      rgba(var(--platinum-rgb), .15),
+      rgba(var(--cyber-blue-rgb), .08)
+    ) border-box;
+  border-radius: var(--radius-md);
   padding: 2rem;
   box-shadow: var(--shadow);
-  transition: transform .15s ease, border-color .15s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-base);
 }
 
 .project:hover {
   transform: translateY(-3px);
-  border-color: rgba(var(--ice-rgb), .25);
+  box-shadow:
+    var(--shadow),
+    var(--glow-blue);
 }
 
 .project-placeholder {
@@ -740,7 +906,7 @@ section {
 
 .project-placeholder:hover {
   transform: none;
-  border-color: var(--border);
+  box-shadow: var(--shadow);
 }
 
 .project-head {
@@ -755,12 +921,18 @@ section {
 }
 
 .tag {
-  font-size: 1.2rem;
-  color: var(--ice);
-  border: 1px solid rgba(var(--ice-rgb), .28);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--cyber-blue);
+  border: 1px solid rgba(var(--cyber-blue-rgb), .3);
+  background: rgba(var(--cyber-blue-rgb), .08);
   padding: .4rem .8rem;
-  border-radius: 999px;
+  border-radius: var(--radius-lg);
   white-space: nowrap;
+  box-shadow: 0 0 10px rgba(var(--cyber-blue-rgb), .15);
 }
 
 .project p {
@@ -772,9 +944,12 @@ section {
 .project-cta {
   display: inline-block;
   margin-top: 1.2rem;
-  font-size: 1.3rem;
-  color: var(--text);
-  opacity: .85;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--steel);
+  opacity: .9;
+  letter-spacing: .3px;
 }
 
 .project-actions {
