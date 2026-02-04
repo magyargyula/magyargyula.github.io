@@ -994,6 +994,13 @@ section {
   opacity: 1;
 }
 
+/* ====== UTILITY CLASSES ====== */
+
+/* Grid elem amely átfogja az összes oszlopot */
+.grid-full-width {
+  grid-column: 1 / -1;
+}
+
 /* ====== CONTACT ====== */
 
 .note {
