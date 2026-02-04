@@ -42,7 +42,7 @@
   <section class="home" id="home">
     <div class="home-content">
       <h3>Szia!</h3>
-      <h1>Magyar Gyula</h1> &nbsp; <h3>vagyok</h3>
+      <h1>Magyar Gyula <span class="subtitle">vagyok</span></h1>
 
       <h3 id="targetTitle">
         Célzott <span id="targetType">operációs</span> pozíciók:
@@ -101,8 +101,7 @@
 
     <div class="home-img">
       <div class="hero-photo">
-        <img class="hero-photo__img" src="img/profile.png" alt="profilkép"
-          onerror="this.style.display='none'; document.getElementById('fallbackAvatar').style.display='grid';" />
+        <img class="hero-photo__img" src="img/profile.png" alt="profilkép" id="heroPhoto" />
         <div class="avatar" id="fallbackAvatar" aria-hidden="true" style="display:none;">
           <i class='bx bx-user'></i>
         </div>
@@ -282,7 +281,7 @@
     <h2 class="section-title">Projektek (portfólió)</h2>
 
     <div class="projects-grid">
-      <a class="project" href="#" onclick="return false;">
+      <div class="project project-placeholder">
         <div class="project-head">
           <h3>Homelab – Windows alap környezet</h3>
           <span class="tag">Dokumentált</span>
@@ -290,16 +289,16 @@
         <p>Gyakorló környezet: felhasználók/csoportok, jogosultságkezelés szemlélet, alap szolgáltatások (DNS/DHCP
           jelleg).</p>
         <span class="project-cta">Következő: képernyőképek + lépéslista</span>
-      </a>
+      </div>
 
-      <a class="project" href="#" onclick="return false;">
+      <div class="project project-placeholder">
         <div class="project-head">
           <h3>Hyper-V – VM-ek & visszaállítás</h3>
           <span class="tag">Alapok</span>
         </div>
-        <p>VM létrehozás, checkpointok, “mi történik ha elromlik” típusú restore gondolkodás.</p>
+        <p>VM létrehozás, checkpointok, "mi történik ha elromlik" típusú restore gondolkodás.</p>
         <span class="project-cta">Következő: rövid leírás + konfiguráció</span>
-      </a>
+      </div>
 
       <div class="project">
         <div class="project-head">

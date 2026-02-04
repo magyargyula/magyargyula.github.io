@@ -73,6 +73,7 @@ body {
     radial-gradient(1200px 900px at 55% 110%, rgba(var(--ice-rgb), .10), transparent 60%),
     var(--bg);
   color: var(--text);
+  overflow-x: hidden; /* elkerüli a vízszintes görgetősávot */
 }
 
 a {
@@ -113,12 +114,10 @@ section {
   z-index: 1000;
 }
 
-/* Only show a subtle “glass” header after scrolling */
+/* Only show a subtle "glass" header after scrolling */
 .header.sticky {
   background: var(--header-bg-sticky);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  background: rgba(15, 23, 42, .70);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
@@ -254,6 +253,10 @@ section {
 }
 
 
+.home-content {
+  overflow-x: hidden; /* elkerüli a typed elem kilógását */
+}
+
 .home-content h3 {
   font-size: 2.0rem;
   color: var(--muted);
@@ -264,6 +267,12 @@ section {
   font-size: 4.6rem;
   line-height: 1.1;
   margin-bottom: 1.2rem;
+}
+
+.home-content h1 .subtitle {
+  font-size: 2.0rem;
+  color: var(--muted);
+  font-weight: 400;
 }
 
 .home-content .lead {
@@ -288,20 +297,20 @@ section {
 /* Typed – outline (stroke) stílus */
 .typed {
   display: block;
-  width: 34ch;
+  width: 100%;
+  max-width: 38ch;      /* megnövelt max szélesség a hosszabb DB szövegekhez */
   line-height: 1.1;     /* FIXÁLJA a sor magasságát */
-  height: 1.2em;              /* fix helyet foglal – állítsd igény szerint */
-  max-width: 100%;
+  height: 1.2em;        /* fix helyet foglal – állítsd igény szerint */
   min-height: 1.25em;   /* ne essen össze törléskor */
   overflow: hidden;     /* ne tudjon kilógni */
   vertical-align: bottom;
   white-space: nowrap;  /* 1 sorban marad, de nem tolja a layoutot */
-  font-size: 3.8rem;   /* méret (növeld/csökkentsd) */
+  font-size: 3.8rem;    /* méret (növeld/csökkentsd) */
   font-weight: 800;
   letter-spacing: .5px;
   color: transparent;   /* ne legyen kitöltés (--fire) volt*/
   -webkit-text-stroke: 1px var(--ice);   /* körvonal színe + vastagság */
-  /* extra “glow” ha szeretnéd */
+  /* extra "glow" ha szeretnéd */
   text-shadow: 0 0 18px rgba(var(--ice-rgb), .22);
 }
 
@@ -725,6 +734,15 @@ section {
   border-color: rgba(var(--ice-rgb), .25);
 }
 
+.project-placeholder {
+  cursor: default;
+}
+
+.project-placeholder:hover {
+  transform: none;
+  border-color: var(--border);
+}
+
 .project-head {
   display: flex;
   justify-content: space-between;
@@ -1071,6 +1089,7 @@ section {
 
   .typed {
     font-size: 2.8rem;
+    max-width: 100%;
     -webkit-text-stroke: 1.5px var(--ice);
     text-stroke: 1.5px var(--ice);
   }
