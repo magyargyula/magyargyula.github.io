@@ -29,29 +29,35 @@
     <i class="bx bx-menu" id="menu-icon" aria-label="Menü"></i>
 
     <nav class="navbar" id="navbar">
-      <a href="#home" class="active">Kezdőlap</a>
-      <a href="#about">Rólam</a>
-      <a href="#skills">Készségek</a>
-      <a href="#experience">Tapasztalat</a>
-      <a href="#education">Képzések</a>
-      <a href="#cv">CV</a>
-      <a href="#projects">Projektek</a>
-      <a href="#contact">Kapcsolat</a>
+      <a href="#home" class="active" data-i18n="nav.home">Kezdőlap</a>
+      <a href="#about" data-i18n="nav.about">Rólam</a>
+      <a href="#skills" data-i18n="nav.skills">Készségek</a>
+      <a href="#experience" data-i18n="nav.experience">Tapasztalat</a>
+      <a href="#education" data-i18n="nav.education">Képzések</a>
+      <a href="#cv" data-i18n="nav.cv">CV</a>
+      <a href="#projects" data-i18n="nav.projects">Projektek</a>
+      <a href="#contact" data-i18n="nav.contact">Kapcsolat</a>
     </nav>
+
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn is-active" data-lang="hu" title="Magyar" type="button">HU</button>
+      <button class="lang-btn" data-lang="en" title="English" type="button">EN</button>
+      <button class="lang-btn" data-lang="de" title="Deutsch" type="button">DE</button>
+    </div>
   </header>
 
   <!-- Home -->
   <section class="home" id="home">
     <div class="home-content">
-      <h3>Szia!</h3>
-      <h1>Magyar Gyula <span class="subtitle">vagyok</span></h1>
+      <h3 data-i18n="home.greeting">Szia!</h3>
+      <h1>Magyar Gyula <span class="subtitle" data-i18n="home.nameSubtitle">vagyok</span></h1>
 
       <h3 id="targetTitle">
-        Célzott <span id="targetType">operációs</span> pozíciók:
+        <span data-i18n="home.targetTitlePrefix">Célzott</span> <span id="targetType">operációs</span> <span data-i18n="home.targetTitleSuffix">pozíciók:</span>
       </h3>
       <span class="typed" aria-label="Pozíciók gépelt animációval"></span>
 
-      <p class="lead">
+      <p class="lead" data-i18n="home.lead">
         Precíz, megbízható, erősen rendszerszemléletű munkavégzés. Magas igényszint a minőségre, következetesség és
         felelősségvállalás. Koordináció és adminisztratív operáció többéves tapasztalattal, IT-közeli érdeklődéssel
         (képzések + projektek). Ügyfél- és belső kommunikáció, utánkövetés, dokumentálás.
@@ -75,7 +81,7 @@
           <i class="bx bxl-facebook"></i>
         </a>
       </div>
-      <p class="active-profile">
+      <p class="active-profile" data-i18n-html="home.activeProfile">
         A kiválasztott <strong id="activeProfileLabel">Operáció</strong> nézethez tartozó dokumentumok érhetők el.
       </p>
 
@@ -89,14 +95,14 @@
 
       <div class="cta btn-ghost">
         <a class="btn btn-ghost" id="cvLink" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank" rel="noopener noreferrer">
-          Önéletrajz (PDF)
+          <span data-i18n="home.cvBtn">Önéletrajz (PDF)</span>
         </a>
         <a class="btn btn-ghost" id="mlLink" href="doc/Magyar_Gyula_ML_Operations.pdf" target="_blank" rel="noopener noreferrer">
-          Motivációs levél (PDF)
+          <span data-i18n="home.mlBtn">Motivációs levél (PDF)</span>
         </a>
 
         <button class="btn btn-ghost" id="phoneModalOpen" type="button">
-          Telefonszám kérése
+          <span data-i18n="home.phoneBtn">Telefonszám kérése</span>
         </button>
       </div>
     </div>
@@ -114,22 +120,22 @@
   <!-- About -->
   <section class="about" id="about">
     <div class="about-box">
-      <h2 class="section-title">Rólam</h2>
+      <h2 class="section-title" data-i18n="about.title">Rólam</h2>
 
-      <p>
+      <p data-i18n="about.p1">
         Precíz, megbízható és rendszerszemléletű Operations / Office Coordinator vagyok, többéves tapasztalattal
         adminisztratív és operatív területen. Erősségem a back office folyamatok támogatása, a pontos dokumentáció,
         valamint több párhuzamos feladat strukturált kezelése.
       </p>
 
-      <p>
+      <p data-i18n="about.p2">
         Munkám során ügyfél- és belső megkeresések kezelésével, feladatpriorizálással, utánkövetéssel és
         folyamatkövetéssel foglalkoztam. Fontos számomra az átlátható működés: érthető kommunikáció, határidők
         betartása,
         és a minőségi adminisztráció.
       </p>
 
-      <p>
+      <p data-i18n="about.p3">
         IT-közeli érdeklődésemet célzott képzésekkel és dokumentált projektekkel fejlesztem (üzemeltetési alapok, AD,
         virtualizáció, MS SQL). Középtávon csapatkoordinációs (supervisor / team lead) irányba szeretnék fejlődni, ahol
         a
@@ -138,10 +144,10 @@
         Angol nyelvtudásom A2–B1 szintű, folyamatosan fejlesztem.
       </p>
 
-      <p>Szabadidőmben hobbiszinten foglalkozom eszközök alap hibakeresésével és kisebb javításaival (laptop/telefon).
+      <p data-i18n="about.p4">Szabadidőmben hobbiszinten foglalkozom eszközök alap hibakeresésével és kisebb javításaival (laptop/telefon).
       </p>
 
-      <ul class="bullets">
+      <ul class="bullets" data-i18n-html="about.bullets">
         <li><strong>Rendszerszemlélet:</strong> analitikus gondolkodás, ok-okozati hibakeresés</li>
         <li><strong>Minőség:</strong> szabálykövetés, igényes dokumentáció, következetes működés</li>
         <li><strong>Megbízhatóság:</strong> felelősségvállalás, határidők és prioritások kezelése</li>
@@ -153,73 +159,73 @@
 
   <!-- Skills -->
   <section class="services" id="skills">
-    <h2 class="section-title">Készségek</h2>
+    <h2 class="section-title" data-i18n="skills.title">Készségek</h2>
 
     <div class="cards">
       <article class="card">
         <i class="bx bx-support"></i>
-        <h3>IT Support szemlélet</h3>
-        <p>Hibajegy-logika, pontos kérdezés, hiba behatárolása, priorizálás, visszajelzés. Hardver/asztali támogatás
+        <h3 data-i18n="skills.card1Title">IT Support szemlélet</h3>
+        <p data-i18n="skills.card1Desc">Hibajegy-logika, pontos kérdezés, hiba behatárolása, priorizálás, visszajelzés. Hardver/asztali támogatás
           irány is.</p>
       </article>
 
       <article class="card">
         <i class="bx bx-server"></i>
-        <h3>Üzemeltetés – alapok (képzés)</h3>
-        <p>Windows/Linux alapismeretek, AD alapok, jogosultságkezelés szemlélet, Hyper-V alapok.</p>
+        <h3 data-i18n="skills.card2Title">Üzemeltetés – alapok (képzés)</h3>
+        <p data-i18n="skills.card2Desc">Windows/Linux alapismeretek, AD alapok, jogosultságkezelés szemlélet, Hyper-V alapok.</p>
       </article>
 
       <article class="card">
         <i class="bx bx-data"></i>
-        <h3>MS SQL – alapok (képzés)</h3>
-        <p>Telepítés/karbantartás alapok, mentés-visszaállítás szemlélet, alap lekérdezések (SELECT/JOIN),
+        <h3 data-i18n="skills.card3Title">MS SQL – alapok (képzés)</h3>
+        <p data-i18n="skills.card3Desc">Telepítés/karbantartás alapok, mentés-visszaállítás szemlélet, alap lekérdezések (SELECT/JOIN),
           index/triggerek, jobok alapjai.</p>
       </article>
 
       <article class="card">
         <i class="bx bx-check-shield"></i>
-        <h3>Koordináció & dokumentálás</h3>
-        <p>Folyamatok rendbetétele, oktatóanyag készítése, betanítás támogatása, ütemezés és kommunikáció.</p>
+        <h3 data-i18n="skills.card4Title">Koordináció & dokumentálás</h3>
+        <p data-i18n="skills.card4Desc">Folyamatok rendbetétele, oktatóanyag készítése, betanítás támogatása, ütemezés és kommunikáció.</p>
       </article>
     </div>
   </section>
 
   <!-- Experience -->
   <section class="projects" id="experience">
-    <h2 class="section-title">Szakmai tapasztalat</h2>
+    <h2 class="section-title" data-i18n="experience.title">Szakmai tapasztalat</h2>
 
     <div class="projects-grid">
       <div class="project">
         <div class="project-head">
-          <h3>Hívás koordinátor (szenior) – Prohuman Zrt.</h3>
+          <h3 data-i18n="experience.job1Title">Hívás koordinátor (szenior) – Prohuman Zrt.</h3>
           <span class="tag">2021–2025</span>
         </div>
-        <p>Napi működés koordinálása, ügyfélkommunikáció, adminisztratív támogatás, problémák feltárása és megoldási
+        <p data-i18n="experience.job1Desc">Napi működés koordinálása, ügyfélkommunikáció, adminisztratív támogatás, problémák feltárása és megoldási
           javaslatok.</p>
-        <span class="project-cta">Eredmények: 95%+ teljesítményértékelés, oktatóanyag készítés (2023)</span>
+        <span class="project-cta" data-i18n="experience.job1Result">Eredmények: 95%+ teljesítményértékelés, oktatóanyag készítés (2023)</span>
       </div>
 
       <div class="project">
         <div class="project-head">
-          <h3>Területi képviselő – Univer Product Zrt.</h3>
+          <h3 data-i18n="experience.job2Title">Területi képviselő – Univer Product Zrt.</h3>
           <span class="tag">2005–2012</span>
         </div>
-        <p>Készletoptimalizálás támogatása, riportálás, promóciók szervezése, partnerkapcsolatok kezelése
+        <p data-i18n="experience.job2Desc">Készletoptimalizálás támogatása, riportálás, promóciók szervezése, partnerkapcsolatok kezelése
           multinacionális környezetben.</p>
-        <span class="project-cta">Eredmény: kiemelt partneri visszajelzések, értékesítési növekedés</span>
+        <span class="project-cta" data-i18n="experience.job2Result">Eredmény: kiemelt partneri visszajelzések, értékesítési növekedés</span>
       </div>
 
       <div class="project">
         <div class="project-head">
-          <h3>Logisztikai munkatárs – QL Elektrocentrum Kft.</h3>
+          <h3 data-i18n="experience.job3Title">Logisztikai munkatárs – QL Elektrocentrum Kft.</h3>
           <span class="tag">1997–2001</span>
         </div>
-        <p>Árubeszerzés és adminisztráció, beszerzési terv készítése és kivitelezése.</p>
-        <span class="project-cta">Eredmény: strukturált átalakítással jelentős hatékonyságjavulás</span>
+        <p data-i18n="experience.job3Desc">Árubeszerzés és adminisztráció, beszerzési terv készítése és kivitelezése.</p>
+        <span class="project-cta" data-i18n="experience.job3Result">Eredmény: strukturált átalakítással jelentős hatékonyságjavulás</span>
       </div>
     </div>
 
-    <p class="note">
+    <p class="note" data-i18n="experience.note">
       (A weboldalon az IT irányt a képzések + projektek mutatják, a szakmai rutinom erősen épít a
       koordinációra,kereskedelmi tapasztalatomra,
       dokumentálásra és megbízhatóságra.)
@@ -229,14 +235,14 @@
   <!-- Education -->
   <section class="about" id="education">
     <div class="about-box">
-      <h2 class="section-title">Képzések</h2>
-      <ul class="bullets">
+      <h2 class="section-title" data-i18n="education.title">Képzések</h2>
+      <ul class="bullets" data-i18n-html="education.items">
         <li><strong>PROGmasters – Adatbázis üzemeltető specialista (MS SQL)</strong> (2022.04 – 2022.07)</li>
         <li><strong>PROGmasters – Junior rendszerüzemeltető</strong> (2021.10 – 2022.04)</li>
         <li><strong>RTV műszerész</strong> (101. sz. Ipari Szakmunkásképző) (1987 – 1989)</li>
         <li><strong>Érettségi – mechanikai műszerész</strong> (2. sz. Ipari Szakközépiskola) (1983 – 1987)</li>
       </ul>
-      <p class="muted" style="margin-top:1.2rem;">
+      <p class="muted" style="margin-top:1.2rem;" data-i18n="education.language">
         Nyelv: magyar (anyanyelv), angol (A2 – B1 folyamatos fejlesztés)
       </p>
     </div>
@@ -244,34 +250,34 @@
 
   <!-- CV -->
   <section class="projects" id="cv">
-    <h2 class="section-title">Önéletrajz &amp; Motivációs levél</h2>
+    <h2 class="section-title" data-i18n="cvSection.title">Önéletrajz &amp; Motivációs levél</h2>
 
     <div class="cv-grid">
       <div class="project cv-card" style="cursor:default;">
-        <h3>Önéletrajz</h3>
-        <p id="cvDesc">
+        <h3 data-i18n="cvSection.cvTitle">Önéletrajz</h3>
+        <p id="cvDesc" data-i18n-html="cvSection.cvDesc">
           A kiválasztott <strong><span class="activeProfileLabelClone">Operáció</span></strong> profilhoz tartozó önéletrajz tölthető le.
         </p>
 
         <div class="tags">
           <a class="btn btn-ghost" id="cvLink2" href="doc/Magyar_Gyula_CV_Operations.pdf" target="_blank"
             rel="noopener" download>
-            Önéletrajz (PDF)
+            <span data-i18n="cvSection.cvBtn">Önéletrajz (PDF)</span>
           </a>
 
         </div>
       </div>
 
       <div class="project cv-card cv-static">
-        <h3>Motivációs levél</h3>
-        <p id="mlDesc" style="margin-top:.4rem;">
+        <h3 data-i18n="cvSection.mlTitle">Motivációs levél</h3>
+        <p id="mlDesc" style="margin-top:.4rem;" data-i18n-html="cvSection.mlDesc">
           A kiválasztott <strong><span class="activeProfileLabelClone">Operáció</span></strong> profilhoz tartozó motivációs levél tölthető le.
         </p>
 
         <div class="tags">
           <a class="btn btn-ghost" id="mlLink2" href="doc/Magyar_Gyula_ML_Operations.pdf" target="_blank"
             rel="noopener" download>
-            Motivációs levél (PDF)
+            <span data-i18n="cvSection.mlBtn">Motivációs levél (PDF)</span>
           </a>
         </div>
       </div>
@@ -280,16 +286,16 @@
 
   <!-- Projects -->
   <section class="projects" id="projects">
-    <h2 class="section-title">Projektek (portfólió)</h2>
+    <h2 class="section-title" data-i18n="projects.title">Projektek (portfólió)</h2>
 
     <div class="projects-grid">
       <div class="project project-featured">
         <div class="project-head">
-          <h3>Callcenter Asszisztens – Interaktív demó</h3>
+          <h3 data-i18n="projects.callcenterTitle">Callcenter Asszisztens – Interaktív demó</h3>
           <span class="tag">JavaScript</span>
         </div>
 
-        <p>
+        <p data-i18n="projects.callcenterDesc">
           Korábbi call centeres tapasztalataim és az ott készített oktatóanyag alapján
           készült interaktív demó alkalmazás. Munkaerő-kölcsönző ügyeleti operátorainak
           nyújt döntéstámogatást: ügyfél-azonosítás, kérdésfa alapú problémamegoldás,
@@ -298,36 +304,36 @@
 
         <div class="project-actions">
           <a class="mini-btn mini-btn-demo" href="https://magyargyula.github.io/Callcenter-Demo/" target="_blank" rel="noopener">
-            Kipróbálom
+            <span data-i18n="projects.callcenterTryBtn">Kipróbálom</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/Callcenter-Demo" target="_blank" rel="noopener">
-            Repo
+            <span data-i18n="projects.btnRepo">Repo</span>
           </a>
         </div>
 
-        <span class="project-cta">Hatékonyabb híváskezelés · Kevesebb stressz · Gyorsabb megoldások</span>
+        <span class="project-cta" data-i18n="projects.callcenterCta">Hatékonyabb híváskezelés · Kevesebb stressz · Gyorsabb megoldások</span>
       </div>
 
       <div class="project">
         <div class="project-head">
-          <h3>Windows Homelab – Active Directory Domain Controller</h3>
+          <h3 data-i18n="projects.homelabTitle">Windows Homelab – Active Directory Domain Controller</h3>
           <span class="tag">Active Directory</span>
         </div>
 
-        <p>
+        <p data-i18n="projects.homelabDesc">
           Windows Server 2022 alapú labor környezet Active Directory Domain Services-szel.
           Felhasználók és csoportok kezelése, OU struktúra, DNS szolgáltatás konfigurálása.
         </p>
 
         <div class="project-actions">
           <a class="mini-btn" href="https://github.com/magyargyula/Windows-Homelab" target="_blank" rel="noopener">
-            Repo
+            <span data-i18n="projects.btnRepo">Repo</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/Windows-Homelab/blob/main/README.md"
             target="_blank" rel="noopener">
-            Dokumentáció
+            <span data-i18n="projects.btnDocs">Dokumentáció</span>
           </a>
         </div>
         <div class="project-thumbs">
@@ -346,16 +352,16 @@
           </a>
         </div>
 
-        <span class="project-cta">Megnyitás: repo + dokumentáció + screenshotok</span>
+        <span class="project-cta" data-i18n="projects.ctaRepoDocScreenshots">Megnyitás: repo + dokumentáció + screenshotok</span>
       </div>
 
       <div class="project">
         <div class="project-head">
-          <h3>Hyper-V Homelab – Windows Server Virtualizáció</h3>
+          <h3 data-i18n="projects.hypervTitle">Hyper-V Homelab – Windows Server Virtualizáció</h3>
           <span class="tag">Hyper-V</span>
         </div>
 
-        <p>
+        <p data-i18n="projects.hypervDesc">
           Windows Server 2022 Datacenter telepítése Hyper-V környezetben.
           VM lifecycle management, checkpoint kezelés és disaster recovery
           (visszaállítás) dokumentált gyakorlata.
@@ -363,17 +369,17 @@
 
         <div class="project-actions">
           <a class="mini-btn" href="https://github.com/magyargyula/Hyper-V-Homelab" target="_blank" rel="noopener">
-            Repo
+            <span data-i18n="projects.btnRepo">Repo</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/Hyper-V-Homelab/blob/main/README.md"
             target="_blank" rel="noopener">
-            Dokumentáció
+            <span data-i18n="projects.btnDocs">Dokumentáció</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/Hyper-V-Homelab/blob/main/TROUBLESHOOTING.md"
             target="_blank" rel="noopener">
-            Troubleshooting
+            <span data-i18n="projects.btnTroubleshooting">Troubleshooting</span>
           </a>
         </div>
         <div class="project-thumbs">
@@ -392,16 +398,16 @@
           </a>
         </div>
 
-        <span class="project-cta">Megnyitás: repo + dokumentáció + screenshotok</span>
+        <span class="project-cta" data-i18n="projects.ctaRepoDocScreenshots">Megnyitás: repo + dokumentáció + screenshotok</span>
       </div>
 
       <div class="project">
         <div class="project-head">
-          <h3>SQL Server 2025 portfólió projekt: munkaerő-kölcsönző adatbázis</h3>
+          <h3 data-i18n="projects.sqlTitle">SQL Server 2025 portfólió projekt: munkaerő-kölcsönző adatbázis</h3>
           <span class="tag">T-SQL</span>
         </div>
 
-        <p>
+        <p data-i18n="projects.sqlDesc">
           Sémák (ref/core/ops/audit), PK/FK + indexek, view-k, tárolt eljárások,
           triggerek (audit + overlap védelem), timesheet és számlázás, demo adatok.
         </p>
@@ -409,23 +415,23 @@
         <!-- Mini link gombok -->
         <div class="project-actions">
           <a class="mini-btn" href="https://github.com/magyargyula/StaffingPro-MSSQL" target="_blank" rel="noopener">
-            Repo
+            <span data-i18n="projects.btnRepo">Repo</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/StaffingPro-MSSQL/blob/main/sql/00_all_in_one.sql"
             target="_blank" rel="noopener">
-            Telepítő script
+            <span data-i18n="projects.btnInstallScript">Telepítő script</span>
           </a>
-            
+
           <a class="mini-btn"
             href="https://github.com/magyargyula/StaffingPro-MSSQL/blob/main/sql/11_demo_queries.sql"
             target="_blank" rel="noopener">
-            Demo lekérdezések
+            <span data-i18n="projects.btnDemoQueries">Demo lekérdezések</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/StaffingPro-MSSQL/tree/main/docs/screenshots"
             target="_blank" rel="noopener">
-            Képek
+            <span data-i18n="projects.btnImages">Képek</span>
           </a>
         </div>
         <div class="project-thumbs">
@@ -444,28 +450,28 @@
           </a>
         </div>
 
-        <span class="project-cta">Megnyitás: repo + script + képernyőképek</span>
+        <span class="project-cta" data-i18n="projects.ctaRepoScriptScreenshots">Megnyitás: repo + script + képernyőképek</span>
       </div>
 
       <div class="project">
         <div class="project-head">
-          <h3>PowerShell IT Toolbox</h3>
+          <h3 data-i18n="projects.psTitle">PowerShell IT Toolbox</h3>
           <span class="tag">PowerShell</span>
         </div>
 
-        <p>
+        <p data-i18n="projects.psDesc">
           Hasznos PowerShell scriptek IT support feladatokhoz: rendszer állapot riport
           (CPU, RAM, disk) és kritikus szolgáltatások ellenőrzése színkódolt kimenettel.
         </p>
 
         <div class="project-actions">
           <a class="mini-btn" href="https://github.com/magyargyula/PowerShell-IT-Toolbox" target="_blank" rel="noopener">
-            Repo
+            <span data-i18n="projects.btnRepo">Repo</span>
           </a>
 
           <a class="mini-btn" href="https://github.com/magyargyula/PowerShell-IT-Toolbox/blob/main/README.md"
             target="_blank" rel="noopener">
-            Dokumentáció
+            <span data-i18n="projects.btnDocs">Dokumentáció</span>
           </a>
         </div>
         <div class="project-thumbs">
@@ -484,19 +490,15 @@
           </a>
         </div>
 
-        <span class="project-cta">Megnyitás: repo + scriptek + dokumentáció</span>
+        <span class="project-cta" data-i18n="projects.ctaRepoScriptsDocs">Megnyitás: repo + scriptek + dokumentáció</span>
       </div>
 
-      <div class="grid-full-width">
-        <p class="note">Az oldalt folyamatosan fejlesztem, egyes részeit még nem publikáltam.</p>
-      </div>
-    
 
   </section>
 
   <!-- Contact -->
   <section class="contact" id="contact">
-    <h2 class="section-title">Kapcsolat</h2>
+    <h2 class="section-title" data-i18n="contact.title">Kapcsolat</h2>
 
     <div class="contact-box">
       <p><i class="bx bx-envelope"></i> <a href="mailto:mgycontact@gmail.com">mgycontact@gmail.com</a></p>
@@ -508,8 +510,8 @@
   </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Magyar Gyula • Portfólió</p>
-    <p class="footer-ai">Az oldal és egyes projektek AI-asszisztált fejlesztéssel készültek (Claude, Anthropic | ChatGPT).</p>
+    <p>© <span id="year"></span> <span data-i18n="footer.copyright">Magyar Gyula • Portfólió</span></p>
+    <p class="footer-ai" data-i18n="footer.ai">Az oldal és egyes projektek AI-asszisztált fejlesztéssel készültek (Claude, Anthropic | ChatGPT, Codex).</p>
     <a class="to-top" href="#top" aria-label="Ugrás a lap tetejére"><i class="bx bx-up-arrow-alt"></i></a>
   </footer>
 
@@ -519,14 +521,14 @@
 
     <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="phoneModalTitle">
       <div class="modal__head">
-        <h3 class="modal__title" id="phoneModalTitle">Telefonszám kérése</h3>
+        <h3 class="modal__title" id="phoneModalTitle" data-i18n="modal.title">Telefonszám kérése</h3>
         <button class="modal__close" type="button" aria-label="Bezárás" id="phoneModalClose">
           <i class="bx bx-x"></i>
         </button>
       </div>
 
       <div class="modal__body">
-        <p class="modal__text">
+        <p class="modal__text" data-i18n="modal.text">
           A telefonszámomat nem jelenítem meg nyilvánosan. Kattints az alábbi gombra, és egy előre kitöltött e-mail
           megnyílik,
           amire válaszban elküldöm az elérhetőséget.
@@ -535,16 +537,16 @@
         <div class="modal__actions">
           <a class="btn" id="phoneMailto"
             href="mailto:mgycontact@gmail.com?subject=Telefonsz%C3%A1m%20k%C3%A9r%C3%A9se%20%E2%80%93%20Magyar%20Gyula%20portf%C3%B3li%C3%B3&body=Szia%20Gyula%2C%0A%0AK%C3%A9rlek%20k%C3%BCldd%20el%20a%20telefonsz%C3%A1modat%20a%20gyors%20egyeztet%C3%A9shez.%0A%0AK%C3%B6sz%C3%B6n%C3%B6m%2C%0A%5BN%C3%A9v%5D%0A%5BC%C3%A9g%5D">
-            E-mail megnyitása
+            <span data-i18n="modal.emailBtn">E-mail megnyitása</span>
           </a>
 
           <button class="btn btn-ghost" type="button" data-close="true">
-            Mégse
+            <span data-i18n="modal.cancelBtn">Mégse</span>
           </button>
         </div>
 
         <p class="modal__hint">
-          Tipp: ha nincs beállítva levelezőprogram a gépeden, másold ki ezt:
+          <span data-i18n="modal.hint">Tipp: ha nincs beállítva levelezőprogram a gépeden, másold ki ezt:</span>
           <span class="modal__email">mgycontact@gmail.com</span>
         </p>
       </div>
@@ -553,6 +555,7 @@
 
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="js/translations.js"></script>
   <script src="js/script.js"></script>
 </body>
 

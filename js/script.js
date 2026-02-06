@@ -6,7 +6,8 @@ const CONFIG = {
   TYPED_SPEED: 55,
   TYPED_BACK_SPEED: 35,
   TYPED_BACK_DELAY: 1200,
-  STORAGE_KEY: "mg_profile"
+  STORAGE_KEY: "mg_profile",
+  LANG_KEY: "mg_language"
 };
 
 // év a footerben
@@ -52,61 +53,70 @@ window.addEventListener("scroll", () => {
   menuIcon?.classList.remove("bx-x");
 });
 
+// ===== LANGUAGE SYSTEM =====
+const LanguageManager = (() => {
+  let currentLang = "hu";
+
+  function getNestedValue(obj, path) {
+    return path.split(".").reduce((o, k) => (o && o[k] !== undefined ? o[k] : null), obj);
+  }
+
+  function setLanguage(lang) {
+    if (!TRANSLATIONS[lang]) return;
+    currentLang = lang;
+
+    const t = TRANSLATIONS[lang];
+
+    // 1. Simple text elements
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.dataset.i18n;
+      const value = getNestedValue(t, key);
+      if (value) el.textContent = value;
+    });
+
+    // 2. HTML content elements
+    document.querySelectorAll("[data-i18n-html]").forEach(el => {
+      const key = el.dataset.i18nHtml;
+      const value = getNestedValue(t, key);
+      if (value) el.innerHTML = value;
+    });
+
+    // 3. Language button states
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.classList.toggle("is-active", btn.dataset.lang === lang);
+    });
+
+    // 4. HTML lang attribute
+    document.documentElement.lang = lang;
+
+    // 5. Sync ProfileManager with new language
+    ProfileManager.syncLanguage(lang);
+
+    // 6. Save to localStorage
+    localStorage.setItem(CONFIG.LANG_KEY, lang);
+  }
+
+  function getCurrentLang() {
+    return currentLang;
+  }
+
+  function init() {
+    const saved = localStorage.getItem(CONFIG.LANG_KEY) || "hu";
+    setLanguage(saved);
+
+    // Language button event listeners
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    });
+  }
+
+  return { setLanguage, getCurrentLang, init };
+})();
+
 // ===== PROFILE SYSTEM (Module Pattern) =====
 const ProfileManager = (() => {
   let typedInstance = null;
-
-  const typedMap = {
-    operations: [
-      "Irodai koordinátor",
-      "Back office munkatárs",
-      "Adminisztratív koordinátor",
-      "Operációs munkatárs"
-    ],
-    supervisor: [
-      "Csapatkoordinátor",
-      "Operációs csoportvezető",
-      "Junior team lead",
-      "Csoportvezető-helyettes"
-    ],
-    it: [
-      "Junior IT support",
-      "IT üzemeltetési támogató",
-      "Service Desk munkatárs"
-    ],
-    db: [
-      "Junior adatbázis-adminisztrátor",
-      "SQL támogatás",
-      "Adatbázis üzemeltetési támogató"
-    ]
-  };
-
-  const profileConfig = {
-    operations: {
-      btnLabel: "Operáció",
-      targetType: "operációs",
-      cv: "doc/Magyar_Gyula_CV_Operations.pdf",
-      ml: "doc/Magyar_Gyula_ML_Operations.pdf"
-    },
-    supervisor: {
-      btnLabel: "Csoportvezető",
-      targetType: "csoportvezetői",
-      cv: "doc/Magyar_Gyula_CV_Supervisor.pdf",
-      ml: "doc/Magyar_Gyula_ML_Supervisor.pdf"
-    },
-    it: {
-      btnLabel: "IT támogatás",
-      targetType: "IT-támogatási",
-      cv: "doc/Magyar_Gyula_CV_ITSupport.pdf",
-      ml: "doc/Magyar_Gyula_ML_ITSupport.pdf"
-    },
-    db: {
-      btnLabel: "DB üzemeltetés",
-      targetType: "adatbázis-üzemeltetési",
-      cv: "doc/Magyar_Gyula_CV_DB.pdf",
-      ml: "doc/Magyar_Gyula_ML_DB.pdf"
-    }
-  };
+  let currentProfile = "operations";
 
   function updateElement(id, property, value) {
     const element = document.getElementById(id);
@@ -114,16 +124,26 @@ const ProfileManager = (() => {
   }
 
   function updateProfileButtons(profileKey) {
+    const lang = LanguageManager.getCurrentLang();
+    const t = TRANSLATIONS[lang];
+
     document.querySelectorAll(".profile-tab").forEach(btn => {
       const isActive = btn.dataset.profile === profileKey;
       btn.classList.toggle("is-active", isActive);
       btn.setAttribute("aria-selected", isActive ? "true" : "false");
       btn.setAttribute("tabindex", isActive ? "0" : "-1");
+
+      // Update button labels from translations
+      const profileT = t.profiles[btn.dataset.profile];
+      if (profileT) btn.textContent = profileT.btnLabel;
     });
   }
 
   function startTyped(profileKey = "operations") {
-    const strings = typedMap[profileKey] || typedMap.operations;
+    const lang = LanguageManager.getCurrentLang();
+    const t = TRANSLATIONS[lang];
+    const profileT = t.profiles[profileKey] || t.profiles.operations;
+    const strings = profileT.typed;
 
     if (typedInstance) {
       typedInstance.destroy();
@@ -141,21 +161,25 @@ const ProfileManager = (() => {
   }
 
   function setProfile(profileKey) {
-    const cfg = profileConfig[profileKey] || profileConfig.operations;
+    currentProfile = profileKey;
+    const lang = LanguageManager.getCurrentLang();
+    const t = TRANSLATIONS[lang];
+    const profileT = t.profiles[profileKey] || t.profiles.operations;
+    const pdfT = t.pdf[profileKey] || t.pdf.operations;
 
     // Update text elements
-    updateElement("targetType", "textContent", cfg.targetType);
-    updateElement("activeProfileLabel", "textContent", cfg.btnLabel);
+    updateElement("targetType", "textContent", profileT.targetType);
+    updateElement("activeProfileLabel", "textContent", profileT.btnLabel);
 
     // Update CV and ML links
-    updateElement("cvLink", "href", cfg.cv);
-    updateElement("mlLink", "href", cfg.ml);
-    updateElement("cvLink2", "href", cfg.cv);
-    updateElement("mlLink2", "href", cfg.ml);
+    updateElement("cvLink", "href", pdfT.cv);
+    updateElement("mlLink", "href", pdfT.ml);
+    updateElement("cvLink2", "href", pdfT.cv);
+    updateElement("mlLink2", "href", pdfT.ml);
 
     // Update all label clones
     document.querySelectorAll(".activeProfileLabelClone").forEach(el => {
-      el.textContent = cfg.btnLabel;
+      el.textContent = profileT.btnLabel;
     });
 
     // Update profile button states
@@ -168,13 +192,25 @@ const ProfileManager = (() => {
     localStorage.setItem(CONFIG.STORAGE_KEY, profileKey);
   }
 
+  function syncLanguage() {
+    // Re-apply current profile with new language texts
+    setProfile(currentProfile);
+  }
+
+  function getCurrentProfile() {
+    return currentProfile;
+  }
+
   function init() {
     const saved = localStorage.getItem(CONFIG.STORAGE_KEY) || "operations";
-    setProfile(saved);
+    currentProfile = saved;
+    // setProfile will be called by LanguageManager.init() → syncLanguage()
   }
 
   return {
     setProfile,
+    syncLanguage,
+    getCurrentProfile,
     init
   };
 })();
@@ -186,8 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => ProfileManager.setProfile(btn.dataset.profile));
   });
 
-  // Initialize profile system
+  // Initialize profile system (reads saved profile from localStorage)
   ProfileManager.init();
+
+  // Initialize language system (this calls syncLanguage → setProfile)
+  LanguageManager.init();
 
   // Hero photo fallback
   const heroPhoto = document.getElementById("heroPhoto");
