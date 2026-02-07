@@ -52,10 +52,10 @@ const TRANSLATIONS = {
     },
 
     pdf: {
-      operations: { cv: "doc/Magyar_Gyula_CV_Operations.pdf", ml: "doc/Magyar_Gyula_ML_Operations.pdf" },
-      supervisor: { cv: "doc/Magyar_Gyula_CV_Supervisor.pdf", ml: "doc/Magyar_Gyula_ML_Supervisor.pdf" },
-      it: { cv: "doc/Magyar_Gyula_CV_ITSupport.pdf", ml: "doc/Magyar_Gyula_ML_ITSupport.pdf" },
-      db: { cv: "doc/Magyar_Gyula_CV_DB.pdf", ml: "doc/Magyar_Gyula_ML_DB.pdf" }
+      operations: { cv: "doc/Gyula_Magyar_CV_Operations_HU.pdf", ml: "doc/Gyula_Magyar_ML_Operations_HU.pdf" },
+      supervisor: { cv: "doc/Gyula_Magyar_CV_Supervisor_HU.pdf", ml: "doc/Gyula_Magyar_ML_Supervisor_HU.pdf" },
+      it: { cv: "doc/Gyula_Magyar_CV_IT_Support_HU.pdf", ml: "doc/Gyula_Magyar_ML_IT_Support_HU.pdf" },
+      db: { cv: "doc/Gyula_Magyar_CV_Junior_DB_HU.pdf", ml: "doc/Gyula_Magyar_ML_Junior_DB_HU.pdf" }
     },
 
     about: {
@@ -201,10 +201,10 @@ const TRANSLATIONS = {
     },
 
     pdf: {
-      operations: { cv: "doc/Gyula_Magyar_CV_Operations_EN.pdf", ml: "doc/Magyar_Gyula_ML_Operations_EN.pdf" },
-      supervisor: { cv: "doc/Gyula_Magyar_CV_Supervisor_EN.pdf", ml: "doc/Magyar_Gyula_ML_Supervisor_EN.pdf" },
-      it: { cv: "doc/Gyula_Magyar_CV_ITSupport_EN.pdf", ml: "doc/Magyar_Gyula_ML_IT_Support_EN.pdf" },
-      db: { cv: "doc/Gyula_Magyar_CV_DB_EN.pdf", ml: "doc/Magyar_Gyula_ML_DB_EN.pdf" }
+      operations: { cv: "doc/Gyula_Magyar_CV_Operations_EN.pdf", ml: "doc/Gyula_Magyar_ML_Operations_EN.pdf" },
+      supervisor: { cv: "doc/Gyula_Magyar_CV_Supervisor_EN.pdf", ml: "doc/Gyula_Magyar_ML_Supervisor_EN.pdf" },
+      it: { cv: "doc/Gyula_Magyar_CV_IT_Support_EN.pdf", ml: "doc/Gyula_Magyar_ML_IT_Support_EN.pdf" },
+      db: { cv: "doc/Gyula_Magyar_CV_Junior_DB_EN.pdf", ml: "doc/Gyula_Magyar_ML_Junior_DB_EN.pdf" }
     },
 
     about: {
@@ -350,10 +350,10 @@ const TRANSLATIONS = {
     },
 
     pdf: {
-      operations: { cv: "doc/Gyula_Magyar_CV_Operations_DE.pdf", ml: "doc/Magyar_Gyula_ML_Operations_DE.pdf" },
-      supervisor: { cv: "doc/Gyula_Magyar_CV_Supervisor_DE.pdf", ml: "doc/Magyar_Gyula_ML_Supervisor_DE.pdf" },
-      it: { cv: "doc/Gyula_Magyar_CV_ITSupport_DE.pdf", ml: "doc/Magyar_Gyula_ML_IT_Support_DE.pdf" },
-      db: { cv: "doc/Gyula_Magyar_CV_DB_DE.pdf", ml: "doc/Magyar_Gyula_ML_DB_DE.pdf" }
+      operations: { cv: "doc/Gyula_Magyar_CV_Operations_DE.pdf", ml: "doc/Gyula_Magyar_ML_Operations_DE.pdf" },
+      supervisor: { cv: "doc/Gyula_Magyar_CV_Supervisor_DE.pdf", ml: "doc/Gyula_Magyar_ML_Supervisor_DE.pdf" },
+      it: { cv: "doc/Gyula_Magyar_CV_IT_Support_DE.pdf", ml: "doc/Gyula_Magyar_ML_IT_Support_DE.pdf" },
+      db: { cv: "doc/Gyula_Magyar_CV_Junior_DB_DE.pdf", ml: "doc/Gyula_Magyar_ML_Junior_DB_DE.pdf" }
     },
 
     about: {
