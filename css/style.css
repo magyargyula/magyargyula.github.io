@@ -358,6 +358,7 @@ section {
   display: flex;
   align-items: center;
   gap: 5rem;
+  overflow: hidden;
 }
 
 /* HOME CTA: 3 gomb rácsban, középre */
@@ -387,7 +388,8 @@ section {
 
 
 .home-content {
-  overflow-x: hidden; /* elkerüli a typed elem kilógását */
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .home-content h3 {
@@ -1384,7 +1386,7 @@ section {
 
   .typed {
     font-size: clamp(1.8rem, 5.5vw, 2.8rem);
-    max-width: calc(100vw - 18%);
+    max-width: 82vw;
     text-overflow: ellipsis;
     -webkit-text-stroke: 1.5px var(--ice);
     text-stroke: 1.5px var(--ice);
