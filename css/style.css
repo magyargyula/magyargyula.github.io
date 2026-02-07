@@ -388,7 +388,6 @@ section {
 
 .home-content {
   overflow-x: hidden;
-  min-width: 0;
 }
 
 .home-content h3 {
@@ -432,7 +431,7 @@ section {
 .typed {
   display: block;
   width: 100%;
-  max-width: 38ch;      /* megnövelt max szélesség a hosszabb DB szövegekhez */
+  max-width: min(38ch, 100%);  /* nem lóghat ki a szülőből */
   line-height: 1.1;     /* FIXÁLJA a sor magasságát */
   height: 1.2em;        /* fix helyet foglal – állítsd igény szerint */
   min-height: 1.25em;   /* ne essen össze törléskor */
@@ -1385,8 +1384,6 @@ section {
 
   .typed {
     font-size: clamp(1.8rem, 5.5vw, 2.8rem);
-    max-width: 82vw;
-    text-overflow: ellipsis;
     -webkit-text-stroke: 1.5px var(--ice);
     text-stroke: 1.5px var(--ice);
   }
