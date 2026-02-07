@@ -358,7 +358,6 @@ section {
   display: flex;
   align-items: center;
   gap: 5rem;
-  overflow: hidden;
 }
 
 /* HOME CTA: 3 gomb rácsban, középre */
@@ -388,8 +387,8 @@ section {
 
 
 .home-content {
-  overflow: hidden;
-  max-width: 100%;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 .home-content h3 {
