@@ -388,6 +388,7 @@ section {
 
 .home-content {
   overflow-x: hidden;
+  min-width: 0;          /* flex child: typed szöveg ne nyomja ki */
 }
 
 .home-content h3 {
@@ -431,17 +432,18 @@ section {
 .typed {
   display: block;
   width: 100%;
-  max-width: min(38ch, 100%);  /* nem lóghat ki a szülőből */
-  line-height: 1.1;     /* FIXÁLJA a sor magasságát */
-  height: 1.2em;        /* fix helyet foglal – állítsd igény szerint */
-  min-height: 1.25em;   /* ne essen össze törléskor */
-  overflow: hidden;     /* ne tudjon kilógni */
+  max-width: 100%;       /* soha nem lóghat ki a szülőből */
+  line-height: 1.1;      /* FIXÁLJA a sor magasságát */
+  height: 1.2em;         /* fix helyet foglal – állítsd igény szerint */
+  min-height: 1.25em;    /* ne essen össze törléskor */
+  overflow: hidden;      /* ne tudjon kilógni */
+  text-overflow: ellipsis;
   vertical-align: bottom;
-  white-space: nowrap;  /* 1 sorban marad, de nem tolja a layoutot */
-  font-size: 3.8rem;    /* méret (növeld/csökkentsd) */
+  white-space: nowrap;   /* 1 sorban marad, de nem tolja a layoutot */
+  font-size: 3.8rem;     /* méret (növeld/csökkentsd) */
   font-weight: 800;
   letter-spacing: .5px;
-  color: transparent;   /* ne legyen kitöltés (--fire) volt*/
+  color: transparent;    /* ne legyen kitöltés (--fire) volt*/
   -webkit-text-stroke: 1px var(--ice);   /* körvonal színe + vastagság */
   /* extra "glow" ha szeretnéd */
   text-shadow: 0 0 18px rgba(var(--ice-rgb), .22);
@@ -1314,6 +1316,29 @@ section {
   }
 }
 
+/* Hero side-by-side: profil tabok + CTA 2-col, kisebb fotó */
+@media (max-width: 1280px) {
+  .profile-tabs {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    max-width: 480px;
+  }
+
+  .home .cta {
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
+    max-width: 480px;
+  }
+
+  .hero-photo {
+    width: 32rem;
+    height: 32rem;
+  }
+
+  .hero-photo__img {
+    width: 26rem;
+    height: 26rem;
+  }
+}
+
 @media (max-width: 1100px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
@@ -1326,20 +1351,21 @@ section {
   .cv-grid {
     grid-template-columns: 1fr;
   }
-}
 
-/* tablet: 2x2 */
-@media (max-width: 980px) {
-  .profile-tabs {
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
-    max-width: 760px;
+  /* Side-by-side: még kisebb fotó */
+  .hero-photo {
+    width: 28rem;
+    height: 28rem;
   }
 
-  .home .cta{ grid-template-columns: repeat(2, minmax(190px, 1fr)); }
+  .hero-photo__img {
+    width: 22rem;
+    height: 22rem;
+  }
 }
 
-/* Mobil layout:  */
-@media (max-width: 860px) {
+/* tablet: column layout + 2x2 grids */
+@media (max-width: 980px) {
   .home {
     flex-direction: column;
     gap: 2.2rem;
@@ -1351,14 +1377,6 @@ section {
     width: 100%;
   }
 
-  .home-content h1 {
-    font-size: 3.6rem;
-  }
-
-  .home-content h3 {
-    font-size: 1.8rem;
-  }
-
   .home-img {
     order: 2;
     width: 100%;
@@ -1367,25 +1385,45 @@ section {
     margin-left: 0;
   }
 
-  /* a kör/kép ne legyen túl nagy mobilon */
+  .profile-tabs {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    max-width: 760px;
+  }
+
+  .home .cta{ grid-template-columns: repeat(2, minmax(190px, 1fr)); }
+
+  /* Hero photo: column layout méret */
   .hero-photo {
-    width: min(38rem, 88vw);
-    height: min(38rem, 88vw);
+    width: min(28rem, 70vw);
+    height: min(28rem, 70vw);
   }
 
   .hero-photo__img {
-    width: min(30rem, 70vw);
-    height: min(30rem, 70vw);
+    width: min(22rem, 56vw);
+    height: min(22rem, 56vw);
   }
 
   .hero-photo .avatar {
-    inset: 3rem;
+    inset: 2.5rem;
   }
 
   .typed {
     font-size: clamp(1.8rem, 5.5vw, 2.8rem);
     -webkit-text-stroke: 1.5px var(--ice);
     text-stroke: 1.5px var(--ice);
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Kisebb mobil tipográfia */
+@media (max-width: 860px) {
+  .home-content h1 {
+    font-size: 3.6rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.8rem;
   }
 
   .section-title {
@@ -1471,12 +1509,12 @@ section {
   }
 
   .hero-photo {
-    width: min(32rem, 85vw);
-    height: min(32rem, 85vw);
+    width: min(24rem, 70vw);
+    height: min(24rem, 70vw);
   }
 
   .hero-photo__img {
-    width: min(26rem, 68vw);
-    height: min(26rem, 68vw);
+    width: min(19rem, 56vw);
+    height: min(19rem, 56vw);
   }
 }

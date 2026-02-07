@@ -140,7 +140,7 @@ const TRANSLATIONS = {
 
     footer: {
       copyright: "Magyar Gyula • Portfólió",
-      ai: "Az oldal és egyes projektek AI-asszisztált fejlesztéssel készültek (Claude, Anthropic | ChatGPT, Codex)."
+      ai: "Az oldal és egyes projektek AI-asszisztált fejlesztéssel készültek."
     },
 
     modal: {
@@ -289,7 +289,7 @@ const TRANSLATIONS = {
 
     footer: {
       copyright: "Magyar Gyula • Portfolio",
-      ai: "This website and some projects were developed with AI assistance (Claude, Anthropic | ChatGPT, Codex)."
+      ai: "This website and some projects were developed with AI assistance."
     },
 
     modal: {
@@ -438,7 +438,7 @@ const TRANSLATIONS = {
 
     footer: {
       copyright: "Magyar Gyula • Portfolio",
-      ai: "Diese Website und einige Projekte wurden mit KI-Unterstützung entwickelt (Claude, Anthropic | ChatGPT, Codex)."
+      ai: "Diese Website und einige Projekte wurden mit KI-Unterstützung entwickelt."
     },
 
     modal: {

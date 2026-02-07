@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(gh:*)",
-      "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\\\Get-SystemHealth.ps1\")"
-    ]
-  }
-}
