@@ -133,6 +133,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -1383,7 +1384,8 @@ section {
 
   .typed {
     font-size: clamp(1.8rem, 5.5vw, 2.8rem);
-    max-width: 100%;
+    max-width: calc(100vw - 18%);
+    text-overflow: ellipsis;
     -webkit-text-stroke: 1.5px var(--ice);
     text-stroke: 1.5px var(--ice);
   }
