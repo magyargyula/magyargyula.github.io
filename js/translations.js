@@ -288,7 +288,7 @@ const TRANSLATIONS = {
     },
 
     footer: {
-      copyright: "Magyar Gyula • Portfolio",
+      copyright: "Gyula Magyar • Portfolio",
       ai: "This website and some projects were developed with AI assistance."
     },
 
@@ -437,7 +437,7 @@ const TRANSLATIONS = {
     },
 
     footer: {
-      copyright: "Magyar Gyula • Portfolio",
+      copyright: "Gyula Magyar • Portfolio",
       ai: "Diese Website und einige Projekte wurden mit KI-Unterstützung entwickelt."
     },
 
