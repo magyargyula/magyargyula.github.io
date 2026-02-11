@@ -18,6 +18,7 @@ const TRANSLATIONS = {
 
     home: {
       greeting: "Szia!",
+      name: "Magyar Gyula",
       nameSubtitle: "vagyok",
       targetTitlePrefix: "Célzott",
       targetTitleSuffix: "pozíciók:",
@@ -87,9 +88,15 @@ const TRANSLATIONS = {
       job2Title: "Területi képviselő – Univer Product Zrt.",
       job2Desc: "Készletoptimalizálás támogatása, riportálás, promóciók szervezése, partnerkapcsolatok kezelése multinacionális környezetben.",
       job2Result: "Eredmény: kiemelt partneri visszajelzések, értékesítési növekedés",
-      job3Title: "Logisztikai munkatárs – QL Elektrocentrum Kft.",
-      job3Desc: "Árubeszerzés és adminisztráció, beszerzési terv készítése és kivitelezése.",
-      job3Result: "Eredmény: strukturált átalakítással jelentős hatékonyságjavulás",
+      job3Title: "Területi képviselő – ARS UNA Stúdió Kft.",
+      job3Desc: "Kis- és nagykereskedelmi partnerek kiszolgálása saját regionális raktárkészletről. Önálló miskolci raktár működtetése, slepptúrás áruterítés, tárgyalások döntéshozókkal, polcszerviz koordinálása, teljes területi működés megszervezése.",
+      job3Result: "Egyszemélyes üzleti egység működtetése teljes döntési szabadsággal, a forgalom maximalizálásáért",
+      job4Title: "Kereskedelmi képviselő – Henkel Magyarország Kft.",
+      job4Desc: "Helyi nagykereskedő forgalmának támogatása slepptúrás áruterítéssel. Értékesítési és készletfeladatok, a Henkel termékek folyamatos elérhetőségének biztosítása kiskereskedelmi pontokon.",
+      job4Result: "Eredmény: szoros együttműködés a nagykereskedővel az értékesítési célok elérése érdekében",
+      job5Title: "Logisztikai munkatárs – QL Elektrocentrum Kft.",
+      job5Desc: "Árubeszerzés és adminisztráció, beszerzési terv készítése és kivitelezése.",
+      job5Result: "Eredmény: strukturált átalakítással jelentős hatékonyságjavulás",
       note: "(A weboldalon az IT irányt a képzések + projektek mutatják, a szakmai rutinom erősen épít a koordinációra, kereskedelmi tapasztalatomra, dokumentálásra és megbízhatóságra.)"
     },
 
@@ -167,6 +174,7 @@ const TRANSLATIONS = {
 
     home: {
       greeting: "Hi!",
+      name: "Gyula Magyar",
       nameSubtitle: "here",
       targetTitlePrefix: "Target",
       targetTitleSuffix: "positions:",
@@ -236,9 +244,15 @@ const TRANSLATIONS = {
       job2Title: "Territory Representative – Univer Product Zrt.",
       job2Desc: "Inventory optimization support, reporting, promotion organization, partner relationship management in a multinational environment.",
       job2Result: "Result: outstanding partner feedback, sales growth",
-      job3Title: "Logistics Associate – QL Elektrocentrum Kft.",
-      job3Desc: "Procurement and administration, purchase plan creation and execution.",
-      job3Result: "Result: significant efficiency improvement through structured reorganization",
+      job3Title: "Territory Representative – ARS UNA Stúdió Kft.",
+      job3Desc: "Servicing retail and wholesale partners from own regional warehouse stock. Operating an independent warehouse in Miskolc, van sales distribution, negotiations with decision-makers, shelf service coordination, organizing complete territory operations.",
+      job3Result: "Operated as a one-person business unit with full decision-making authority, focused on revenue maximization",
+      job4Title: "Sales Representative – Henkel Magyarország Kft.",
+      job4Desc: "Supporting local wholesaler sales through van sales distribution. Sales and inventory tasks, ensuring continuous availability of Henkel products at retail points.",
+      job4Result: "Result: close cooperation with the wholesaler to achieve sales targets",
+      job5Title: "Logistics Associate – QL Elektrocentrum Kft.",
+      job5Desc: "Procurement and administration, purchase plan creation and execution.",
+      job5Result: "Result: significant efficiency improvement through structured reorganization",
       note: "(On this website, the IT direction is demonstrated by courses + projects. My professional experience strongly builds on coordination, commercial background, documentation and reliability.)"
     },
 
@@ -316,6 +330,7 @@ const TRANSLATIONS = {
 
     home: {
       greeting: "Hallo!",
+      name: "Gyula Magyar",
       nameSubtitle: "hier",
       targetTitlePrefix: "Angestrebte",
       targetTitleSuffix: "Positionen:",
@@ -385,9 +400,15 @@ const TRANSLATIONS = {
       job2Title: "Gebietsvertreter – Univer Product Zrt.",
       job2Desc: "Unterstützung der Bestandsoptimierung, Berichterstattung, Organisation von Aktionen, Partnerpflege in einem multinationalen Umfeld.",
       job2Result: "Ergebnis: herausragendes Partnerfeedback, Umsatzwachstum",
-      job3Title: "Logistikmitarbeiter – QL Elektrocentrum Kft.",
-      job3Desc: "Beschaffung und Administration, Erstellung und Umsetzung von Einkaufsplänen.",
-      job3Result: "Ergebnis: deutliche Effizienzsteigerung durch strukturierte Umgestaltung",
+      job3Title: "Gebietsvertreter – ARS UNA Stúdió Kft.",
+      job3Desc: "Betreuung von Einzel- und Großhandelspartnern aus eigenem regionalen Lagerbestand. Betrieb eines eigenständigen Lagers in Miskolc, Verkaufswagenvertrieb, Verhandlungen mit Entscheidungsträgern, Regalservice-Koordination, Organisation des gesamten Gebietsbetriebs.",
+      job3Result: "Betrieb als Ein-Personen-Geschäftseinheit mit voller Entscheidungsfreiheit, fokussiert auf Umsatzmaximierung",
+      job4Title: "Handelsvertreter – Henkel Magyarország Kft.",
+      job4Desc: "Unterstützung des lokalen Großhändlerumsatzes durch Verkaufswagenvertrieb. Vertriebs- und Bestandsaufgaben, Sicherstellung der kontinuierlichen Verfügbarkeit von Henkel-Produkten an Einzelhandelsstandorten.",
+      job4Result: "Ergebnis: enge Zusammenarbeit mit dem Großhändler zur Erreichung der Vertriebsziele",
+      job5Title: "Logistikmitarbeiter – QL Elektrocentrum Kft.",
+      job5Desc: "Beschaffung und Administration, Erstellung und Umsetzung von Einkaufsplänen.",
+      job5Result: "Ergebnis: deutliche Effizienzsteigerung durch strukturierte Umgestaltung",
       note: "(Auf dieser Website wird die IT-Richtung durch Schulungen + Projekte demonstriert. Meine Berufserfahrung baut stark auf Koordination, kaufmännischem Hintergrund, Dokumentation und Zuverlässigkeit auf.)"
     },
 
