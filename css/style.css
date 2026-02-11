@@ -1416,7 +1416,6 @@ section {
   .typed {
     font-size: clamp(1.8rem, 5.5vw, 2.8rem);
     -webkit-text-stroke: 1.5px var(--ice);
-    text-stroke: 1.5px var(--ice);
     max-width: 100%;
     text-overflow: ellipsis;
   }
