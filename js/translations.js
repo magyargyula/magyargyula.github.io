@@ -63,7 +63,7 @@ const TRANSLATIONS = {
       title: "Rólam",
       p1: "Precíz, megbízható és rendszerszemléletű Operations / Office Coordinator vagyok, többéves tapasztalattal adminisztratív és operatív területen. Erősségem a back office folyamatok támogatása, a pontos dokumentáció, valamint több párhuzamos feladat strukturált kezelése.",
       p2: "Munkám során ügyfél- és belső megkeresések kezelésével, feladatpriorizálással, utánkövetéssel és folyamatkövetéssel foglalkoztam. Fontos számomra az átlátható működés: érthető kommunikáció, határidők betartása, és a minőségi adminisztráció.",
-      p3: "IT-közeli érdeklődésemet célzott képzésekkel és dokumentált projektekkel fejlesztem (üzemeltetési alapok, AD, virtualizáció, MS SQL). Középtávon csapatkoordinációs (supervisor / team lead) irányba szeretnék fejlődni, ahol a napi működés összehangolásával és a minőségi munkavégzés támogatásával járulhatok hozzá a csapat eredményességéhez. Angol nyelvtudásom A2–B1 szintű, folyamatosan fejlesztem.",
+      p3: "IT-közeli érdeklődésemet célzott képzésekkel és dokumentált projektekkel fejlesztem (üzemeltetési alapok, AD, virtualizáció, MS SQL). Középtávon csapatkoordinációs (supervisor / team lead) irányba szeretnék fejlődni, ahol a napi működés összehangolásával és a minőségi munkavégzés támogatásával járulhatok hozzá a csapat eredményességéhez. Angol nyelvtudásom B1 szintű, folyamatosan fejlesztem.",
       p4: "Szabadidőmben hobbiszinten foglalkozom eszközök alap hibakeresésével és kisebb javításaival (laptop/telefon).",
       bullets: "<li><strong>Rendszerszemlélet:</strong> analitikus gondolkodás, ok-okozati hibakeresés</li><li><strong>Minőség:</strong> szabálykövetés, igényes dokumentáció, következetes működés</li><li><strong>Megbízhatóság:</strong> felelősségvállalás, határidők és prioritások kezelése</li><li><strong>Ügyfélkezelés és kommunikáció:</strong> igényfelmérés, érthető tájékoztatás, megoldásorientált konfliktuskezelés, utánkövetés</li>"
     },
@@ -103,7 +103,7 @@ const TRANSLATIONS = {
     education: {
       title: "Képzések",
       items: "<li><strong>PROGmasters – Adatbázis üzemeltető specialista (MS SQL)</strong> (2022.04 – 2022.07)</li><li><strong>PROGmasters – Junior rendszerüzemeltető</strong> (2021.10 – 2022.04)</li><li><strong>RTV műszerész</strong> (101. sz. Ipari Szakmunkásképző) (1987 – 1989)</li><li><strong>Érettségi – mechanikai műszerész</strong> (2. sz. Ipari Szakközépiskola) (1983 – 1987)</li>",
-      language: "Nyelv: magyar (anyanyelv), angol (A2 – B1 folyamatos fejlesztés)"
+      language: "Nyelv: magyar (anyanyelv), angol (B1 folyamatos fejlesztés)"
     },
 
     cvSection: {
@@ -219,7 +219,7 @@ const TRANSLATIONS = {
       title: "About Me",
       p1: "I am a precise, reliable and system-oriented Operations / Office Coordinator with years of experience in administrative and operational roles. My strengths include supporting back office processes, accurate documentation, and structured management of multiple parallel tasks.",
       p2: "In my work, I have handled customer and internal inquiries, task prioritization, follow-up and process tracking. Transparent operations are important to me: clear communication, meeting deadlines, and quality administration.",
-      p3: "I develop my IT-related interests through targeted courses and documented projects (system administration basics, AD, virtualization, MS SQL). In the medium term, I would like to grow into a team coordination (supervisor / team lead) direction, where I can contribute to team effectiveness by coordinating daily operations and supporting quality work. My English level is A2–B1, continuously improving.",
+      p3: "I develop my IT-related interests through targeted courses and documented projects (system administration basics, AD, virtualization, MS SQL). In the medium term, I would like to grow into a team coordination (supervisor / team lead) direction, where I can contribute to team effectiveness by coordinating daily operations and supporting quality work. My English level is B1, continuously improving.",
       p4: "In my free time, I do basic troubleshooting and minor repairs on devices (laptop/phone) as a hobby.",
       bullets: "<li><strong>Systems thinking:</strong> analytical approach, root cause troubleshooting</li><li><strong>Quality:</strong> compliance, thorough documentation, consistent operations</li><li><strong>Reliability:</strong> accountability, deadline and priority management</li><li><strong>Customer service & communication:</strong> needs assessment, clear information, solution-oriented conflict resolution, follow-up</li>"
     },
@@ -259,7 +259,7 @@ const TRANSLATIONS = {
     education: {
       title: "Education & Training",
       items: "<li><strong>PROGmasters – Database Operations Specialist (MS SQL)</strong> (2022.04 – 2022.07)</li><li><strong>PROGmasters – Junior System Administrator</strong> (2021.10 – 2022.04)</li><li><strong>RTV Technician</strong> (Vocational School No. 101) (1987 – 1989)</li><li><strong>Secondary School – Mechanical Instrument Maker</strong> (Technical School No. 2) (1983 – 1987)</li>",
-      language: "Languages: Hungarian (native), English (A2 – B1, continuously improving)"
+      language: "Languages: Hungarian (native), English (B1, continuously improving)"
     },
 
     cvSection: {
@@ -375,7 +375,7 @@ const TRANSLATIONS = {
       title: "Über mich",
       p1: "Ich bin ein präziser, zuverlässiger und systemorientierter Operations / Office Coordinator mit langjähriger Erfahrung im administrativen und operativen Bereich. Meine Stärken sind die Unterstützung von Back-Office-Prozessen, genaue Dokumentation sowie die strukturierte Bearbeitung mehrerer paralleler Aufgaben.",
       p2: "In meiner Arbeit habe ich mich mit Kunden- und internen Anfragen, Aufgabenpriorisierung, Nachverfolgung und Prozessüberwachung beschäftigt. Transparente Abläufe sind mir wichtig: verständliche Kommunikation, Einhaltung von Fristen und qualitative Administration.",
-      p3: "Mein IT-nahes Interesse entwickle ich durch gezielte Schulungen und dokumentierte Projekte (Systemadministration-Grundlagen, AD, Virtualisierung, MS SQL). Mittelfristig möchte ich mich in Richtung Teamkoordination (Supervisor / Teamleiter) entwickeln, wo ich durch die Abstimmung des Tagesgeschäfts und die Unterstützung qualitativ hochwertiger Arbeit zur Teameffektivität beitragen kann. Meine Englischkenntnisse sind auf A2–B1-Niveau, ich verbessere sie kontinuierlich.",
+      p3: "Mein IT-nahes Interesse entwickle ich durch gezielte Schulungen und dokumentierte Projekte (Systemadministration-Grundlagen, AD, Virtualisierung, MS SQL). Mittelfristig möchte ich mich in Richtung Teamkoordination (Supervisor / Teamleiter) entwickeln, wo ich durch die Abstimmung des Tagesgeschäfts und die Unterstützung qualitativ hochwertiger Arbeit zur Teameffektivität beitragen kann. Meine Englischkenntnisse sind auf B1-Niveau, ich verbessere sie kontinuierlich.",
       p4: "In meiner Freizeit beschäftige ich mich hobbymäßig mit grundlegender Fehlersuche und kleineren Reparaturen an Geräten (Laptop/Telefon).",
       bullets: "<li><strong>Systemdenken:</strong> analytisches Denken, Ursache-Wirkungs-Fehlersuche</li><li><strong>Qualität:</strong> Regelkonformität, sorgfältige Dokumentation, konsistenter Betrieb</li><li><strong>Zuverlässigkeit:</strong> Verantwortungsbewusstsein, Termin- und Prioritätenmanagement</li><li><strong>Kundenbetreuung & Kommunikation:</strong> Bedarfsermittlung, verständliche Information, lösungsorientierte Konfliktbewältigung, Nachverfolgung</li>"
     },
@@ -415,7 +415,7 @@ const TRANSLATIONS = {
     education: {
       title: "Ausbildung & Schulungen",
       items: "<li><strong>PROGmasters – Datenbankbetriebs-Spezialist (MS SQL)</strong> (2022.04 – 2022.07)</li><li><strong>PROGmasters – Junior Systemadministrator</strong> (2021.10 – 2022.04)</li><li><strong>RTV-Techniker</strong> (Berufsschule Nr. 101) (1987 – 1989)</li><li><strong>Abitur – Mechanischer Instrumentenbauer</strong> (Fachschule Nr. 2) (1983 – 1987)</li>",
-      language: "Sprachen: Ungarisch (Muttersprache), Englisch (A2 – B1, kontinuierliche Verbesserung)"
+      language: "Sprachen: Ungarisch (Muttersprache), Englisch (B1, kontinuierliche Verbesserung)"
     },
 
     cvSection: {
