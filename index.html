@@ -127,7 +127,7 @@ p.lead{font-size:17.5px;color:var(--ink2);max-width:54ch;margin:0 0 30px}
 .btn.ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
 .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-/* hero kép - keret nélküli kivágás, egérkövetéses dőléssel */
+/* hero kép - lekerekített portré, egérkövetéses dőléssel */
 .framewrap{display:grid;place-items:center;perspective:1100px}
 .frame{position:relative;width:min(340px,78vw);transform-style:preserve-3d;
   transform:rotateX(0deg) rotateY(0deg);transition:transform .5s cubic-bezier(.22,.9,.3,1);will-change:transform}
@@ -141,11 +141,10 @@ p.lead{font-size:17.5px;color:var(--ink2);max-width:54ch;margin:0 0 30px}
   transform:translate(-50%,0) translateZ(-30px);
   background:radial-gradient(ellipse at center,color-mix(in srgb,var(--ink) 26%,transparent),transparent 72%);
   filter:blur(7px);pointer-events:none}
-.heroimg{position:relative;z-index:1;width:100%;transform:translateZ(24px)}
-.heroimg img{
-  width:100%;height:auto;display:block;
-  filter:contrast(1.06) saturate(1.05) drop-shadow(0 22px 26px rgba(0,0,0,.28));
-}
+.heroimg{position:relative;z-index:1;width:100%;transform:translateZ(24px);
+  border-radius:22px;overflow:hidden;background:#1D2127;
+  box-shadow:0 26px 48px -18px rgba(0,0,0,.45),0 0 0 1px color-mix(in srgb,var(--ink) 10%,transparent)}
+.heroimg img{width:100%;height:auto;aspect-ratio:800/1068;object-fit:cover;display:block}
 .ph{color:var(--muted);font-size:12px;letter-spacing:.04em;line-height:1.95;padding:0 26px}
 .ph strong{display:block;color:var(--ink2);font-size:11.5px;font-weight:600;letter-spacing:.16em;margin-bottom:6px}
 
@@ -520,7 +519,7 @@ footer{border-top:1px solid var(--line-soft);padding:32px 0 48px;position:relati
         <div class="aura"></div>
         <div class="floor"></div>
         <div class="heroimg">
-          <img src="assets/hero-nobg.png" alt="Magyar Gyula" width="800" height="960">
+          <img src="assets/hero.jpg" alt="Magyar Gyula" width="800" height="1068" fetchpriority="high" decoding="async">
         </div>
       </div>
     </div>

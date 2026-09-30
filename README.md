@@ -1,2 +1,2 @@
 # magyargyula.github.io
-My personal portfolio
+Gyu portfolio
